@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sinosoft.ap.system.library.domain.LibraryEntity;
-import com.sinosoft.ap.system.library.domain.LibraryMapper;
+import com.sinosoft.ap.system.library.domain.LibraryRepository;
 
 
 @Service
 public class LibraryServiceImpl implements LibraryService{
 	@Autowired
-	private LibraryMapper libraryMapper;
+	private LibraryRepository libraryRepository;
 
 	/**
 	 * 获取角色模块
@@ -19,6 +19,6 @@ public class LibraryServiceImpl implements LibraryService{
 	 */
 	@Override
 	public LibraryEntity findLibraryById(String id) {
-		return libraryMapper.findLibraryById(id);
+		return libraryRepository.findLibraryById(id);
 	}
 }

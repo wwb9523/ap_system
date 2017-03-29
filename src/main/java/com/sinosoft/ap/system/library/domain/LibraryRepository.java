@@ -1,12 +1,6 @@
 package com.sinosoft.ap.system.library.domain;
 
-import java.util.List;
-
-import org.apache.ibatis.annotations.Select;
-
-import com.sinosoft.ap.system.permission.domain.ModuleInfo;
-
-public interface LibraryMapper {
+public interface LibraryRepository {
 
 	/**
 	 * 获取该人的权限模块
