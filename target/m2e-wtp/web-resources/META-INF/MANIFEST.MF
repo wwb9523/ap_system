@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: spring-boot-shiro
 Implementation-Version: 1.5.1.RELEASE
-Built-By: ABCD
+Built-By: Administrator
 Implementation-Vendor-Id: org.springframework.boot
 Build-Jdk: 1.8.0_121
 Implementation-URL: http://maven.apache.org
