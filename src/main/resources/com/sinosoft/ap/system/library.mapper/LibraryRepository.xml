@@ -8,4 +8,7 @@
 	</select>
 
 
+	<select id="findLibraryInfoAll" resultType="com.sinosoft.ap.system.library.domain.LibraryEntity">
+		SELECT * FROM APS_LIBRARY
+	</select>
 </mapper>
