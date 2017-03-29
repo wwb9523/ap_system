@@ -5,6 +5,7 @@ public class UserHeadEntity {
 	private String USER_ID;
 	
 	public String getUSER_HEAD_ID() {
+		//注释
 		return USER_HEAD_ID;
 	}
 	public void setUSER_HEAD_ID(String uSER_HEAD_ID) {
