@@ -14,8 +14,8 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.sinosoft.ap.system.usermanage.domain.UserInfo;
-import com.sinosoft.ap.system.usermanage.service.UserService;
+import com.sinosoft.ap.system.user.domain.UserInfo;
+import com.sinosoft.ap.system.user.service.UserService;
 
 
 /**
