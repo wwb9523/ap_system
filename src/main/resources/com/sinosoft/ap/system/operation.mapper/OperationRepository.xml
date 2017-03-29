@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sinosoft.ap.system.operation.domain.OperationRepository">
+
+	<select id="findOperationById" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
+		SELECT * FROM APS_OPERATION where RESOURCE_ID = #{id}
+	</select>
+
+
+</mapper>
