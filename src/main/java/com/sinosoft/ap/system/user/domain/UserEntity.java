@@ -1,12 +1,14 @@
 package com.sinosoft.ap.system.user.domain;
 
+import java.sql.Date;
+
 public class UserEntity {
 	private String userId;
 	private String userIdCode;
 	private String userAccount;
 	private String userMaile;
 	private String userTelnumber;
-	private String userCreateTime;
+	private Date userCreateTime;
 	
 	public void setUserId(String userId){
 		this.userId=userId;
@@ -43,10 +45,10 @@ public class UserEntity {
 		return this.userTelnumber;
 	}
 	
-	public void setUserCreateTime(String userCreateTime){
+	public void setUserCreateTime(Date userCreateTime){
 		this.userCreateTime=userCreateTime;
 	}
-	public String getUserCreateTime(){
+	public Date getUserCreateTime(){
 		return this.userCreateTime;
 	}
 }
