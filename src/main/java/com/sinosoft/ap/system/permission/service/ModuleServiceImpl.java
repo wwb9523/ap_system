@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sinosoft.ap.system.permission.domain.ModuleInfo;
-import com.sinosoft.ap.system.permission.mapper.ModuleMapper;
+import com.sinosoft.ap.system.permission.domain.ModuleMapper;
+
 
 @Service
 public class ModuleServiceImpl implements ModuleService{
@@ -18,7 +19,8 @@ public class ModuleServiceImpl implements ModuleService{
 	 * @param userId
 	 * @return
 	 */
+	@Override
 	public List<ModuleInfo> findModuleByUserId(int userId) {
-		return null;
+		return moduleMapper.findModuleByUserId(userId);
 	}
 }
