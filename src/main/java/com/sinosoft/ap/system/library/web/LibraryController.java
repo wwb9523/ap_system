@@ -22,10 +22,11 @@ public class LibraryController {
 	 * @return
 	 */
 	@RequestMapping("jumpInfoPage")
-	public ModelAndView updateInfoPage(String id) {
-		ModelAndView mav=new ModelAndView("library/jumpInfoPage.jsp");
-		LibraryEntity libraryEntity=libraryService.findLibraryById(id);
-		mav.addObject("libraryEntity", libraryEntity);
-		return mav;
+	@ResponseBody
+	public String updateInfoPage(String id) {
+//		ModelAndView mav=new ModelAndView("library/jumpInfoPage.jsp");
+		LibraryEntity libraryEntity=libraryService.findLibraryById("1");
+//		mav.addObject("libraryEntity", libraryEntity);
+		return libraryEntity.getLibraryCode();
 	}
 }

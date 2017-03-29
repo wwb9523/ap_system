@@ -1,11 +1,16 @@
 package com.sinosoft.ap.system.library.domain;
 
+import java.sql.Date;
+
 public class LibraryEntity {
 	private String libraryId;
 	private String libraryName;
 	private String libraryCode;
 	private String libraryDesc;
-	private String libraryCreateTime;
+	private Date libraryCreateTime;
+	public String getLibraryCode() {
+		return libraryCode;
+	}
 	
 	public void setLibraryId(String libraryId){
 		this.libraryId=libraryId;
@@ -23,22 +28,17 @@ public class LibraryEntity {
 	public void setLibraryCode(String libraryCode){
 		this.libraryCode=libraryCode;
 	}
-	public String getLibraryCode(){
-		return this.libraryCode;
-	}
-	
-	public void setLibraryDesc(){
-		this.libraryDesc=libraryDesc;
-	}
 	public String getLibraryDesc(){
 		return this.libraryDesc;
 	}
-	
-	public void setLibraryCreateTime(String libraryCreateTime){
-		this.libraryCreateTime=libraryCreateTime;
+	public Date getLibraryCreateTime() {
+		return libraryCreateTime;
 	}
-	public String getLibraryCreateTime(){
-		return this.libraryCreateTime;
+	public void setLibraryCreateTime(Date libraryCreateTime) {
+		this.libraryCreateTime = libraryCreateTime;
 	}
-	
+	public void setLibraryDesc(String libraryDesc) {
+		this.libraryDesc = libraryDesc;
+	}
+		
 }
