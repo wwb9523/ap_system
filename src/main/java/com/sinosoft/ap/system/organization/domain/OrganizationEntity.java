@@ -1,7 +1,5 @@
 package com.sinosoft.ap.system.organization.domain;
 
-import java.sql.Date;
-
 public class OrganizationEntity {
 	private String organId;
 	private String organName;
@@ -9,7 +7,7 @@ public class OrganizationEntity {
 	private Integer organSort;
 	private String organParentId;
 	private Integer organLevel;
-	private Date organCreateTime;
+	private String organCreateTime;
 	private String organDesc;
 	
 	public void setOrganId(String organId){
@@ -54,10 +52,10 @@ public class OrganizationEntity {
 		return this.organLevel;
 	}
 	
-	public void setOrganCreateTime(Date organCreateTime){
+	public void setOrganCreateTime(String organCreateTime){
 		this.organCreateTime=organCreateTime;
 	}
-	public Date getOrganCreateTime(){
+	public String getOrganCreateTime(){
 		return this.organCreateTime;
 	}
 	
