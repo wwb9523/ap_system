@@ -1,6 +1,6 @@
 package com.sinosoft.ap.system.resource.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class ResourceEntity {
 	private String RESOURCE_ID;

@@ -1,6 +1,6 @@
 package com.sinosoft.ap.system.role.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class RoleEntity {
 	private String ROLE_ID;

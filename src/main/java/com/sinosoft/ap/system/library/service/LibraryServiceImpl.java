@@ -1,7 +1,5 @@
 package com.sinosoft.ap.system.library.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +20,5 @@ public class LibraryServiceImpl implements LibraryService{
 	@Override
 	public LibraryEntity findLibraryById(String id) {
 		return libraryRepository.findLibraryById(id);
-	}
-
-	@Override
-	public List<LibraryEntity> findLibraryAll() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

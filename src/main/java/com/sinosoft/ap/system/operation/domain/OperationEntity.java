@@ -1,6 +1,6 @@
 package com.sinosoft.ap.system.operation.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class OperationEntity {
 	private String OPERETION_ID;

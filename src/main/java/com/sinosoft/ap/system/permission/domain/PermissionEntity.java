@@ -1,6 +1,6 @@
 package com.sinosoft.ap.system.permission.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class PermissionEntity {
 	private String PERMISSION_ID;
