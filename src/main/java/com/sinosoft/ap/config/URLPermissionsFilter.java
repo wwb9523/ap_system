@@ -14,8 +14,6 @@ import org.apache.shiro.web.filter.authz.PermissionsAuthorizationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.sinosoft.ap.system.user.service.UserService;
-
 
 
 @Component("urlPermissionsFilter")
