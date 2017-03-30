@@ -1,6 +1,6 @@
 package com.sinosoft.ap.system.userlogin.domain;
 
-public class LoginEntity {
+public class LoginVO {
 	private String userId;
 	private String userIdCode;
 	private String userAccount;
