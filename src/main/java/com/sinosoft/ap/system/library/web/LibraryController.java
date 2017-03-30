@@ -27,12 +27,8 @@ public class LibraryController {
 	@ResponseBody
 	public String updateInfoPage(String id) {
 //		ModelAndView mav=new ModelAndView("library/jumpInfoPage.jsp");
-<<<<<<< HEAD
-		List<LibraryEntity> libraryEntity=libraryService.findLibraryInfoAll();
-=======
-		LibraryVO libraryEntity=libraryService.findLibraryById("1");
->>>>>>> 37025cec6bed888210871f3031eee274de268890
+		LibraryVO libraryVO=libraryService.findLibraryById("1");
 //		mav.addObject("libraryEntity", libraryEntity);
-		return libraryEntity.getLibraryCode();
+		return libraryVO.getLibraryCode();
 	}
 }
