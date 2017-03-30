@@ -34,5 +34,4 @@ public class UserPasswordVO {
 		this.userPasswordCreatetime = userPasswordCreatetime;
 	}
 	
-	
 }
