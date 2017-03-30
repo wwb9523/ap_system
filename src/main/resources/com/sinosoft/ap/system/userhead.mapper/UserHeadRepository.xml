@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sinosoft.ap.system.userhead.domain.UserHeadRepository">
+
+	<select id="selectList" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.userhead.domain.UserHeadVO">
+		SELECT * FROM APS_USER_HEAD WHERE USER_ID = #{userId};
+	</select>
+	
+  
+	<insert id="insert" parameterType="com.sinosoft.ap.system.userhead.domain.UserHeadVO">
+		INSERT INTO APS_USER_HEAD(USER_HEAD_ID,USER_ID,USER_HEAD_ADDRESS) VALUES(#{userHeadId:VARCHAR},#{userId:VARCHAR},#{userHeadAddress:VARCHAR});
+	</insert>
+	
+	<delete id="delete" parameterType="java.lang.String">
+		DELETE FROM APS_USER_HEAD WHERE USER_ID = #{userId};
+	</delete>
+	
+	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.userhead.domain.UserHeadVO">
+		UPDATE APS_USER_HEAD 
+		SET 
+		<if test ="userId != null">
+		USER_ID= #{userId}, 
+		</if>
+		<if test ="userHeadAddress != null">
+		USER_HEAD_ADDRESS = #{userHeadAddress}  
+		</if>
+		where USER_HEAD_ID = #{userHeadId:VARCHAR};
+	</update>
+	
+
+</mapper>

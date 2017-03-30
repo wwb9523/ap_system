@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sinosoft.ap.system.userloginlog.domain.UserLoginLogRepository">	
+
+	<select id="selectList" parameterType="com.sinosoft.ap.system.userloginlog.domain.UserLoginLogVO"  resultType="com.sinosoft.ap.system.userloginlog.domain.UserLoginLogVO">
+		SELECT * FROM APS_USER_LOGIN_LOG where USER_ID=#{userId}
+	</select>
+
+	<delete id="delete" parameterType="com.sinosoft.ap.system.userloginlog.domain.UserLoginLogVO" >
+		delete FROM APS_USER_LOGIN_LOG where USER_LOGIN_LOG_ID=#{userLoginLogId}
+	</delete>
+	
+	<insert id="insert"  parameterType="com.sinosoft.ap.system.userloginlog.domain.UserLoginLogVO">
+		insert into APS_USER_LOGIN_LOG(USER_LOGIN_LOG_ID,USER_ID,LOGIN_USER,LOGIN_IP,LOGIN_OS,LOGIN_BROWER) 
+		values(#{userLoginLogId},#{userId},#{loginUser},#{loginIp},#{loginOs},#{loginBrower})
+	</insert>
+	
+	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.userloginlog.domain.UserLoginLogVO">
+		update APS_USER_LOGIN_LOG set USER_ID=#{userId},LOGIN_USER=#{loginUser},LOGIN_IP=#{loginIp},
+		LOGIN_OS=#{loginOs},LOGIN_BROWER=#{loginBrower} where USER_LOGIN_LOG_ID=#{userLoginLogId}
+	</update>
+</mapper>
