@@ -21,9 +21,9 @@ public class ResourceController {
 
 	@RequestMapping("findALL")
 	@ResponseBody
-	public List<ResourceVO> findAll() {
-		List<ResourceVO> resourceVO=resourceService.findAll();
-		return resourceVO;
+	public String findAll() {
+		ResourceVO resourceVO=resourceService.findAll();
+		return resourceVO.getResourceId();
 	}
 	
 	/**
@@ -42,22 +42,22 @@ public class ResourceController {
 	@ResponseBody
 	public void remove(ResourceVO resource) {
 		resourceService.remove(resource);
-		String resourceIconId=resourceService.findRelIconById(resource.getRESOURCE_ID());
+		String resourceIconId=resourceService.findRelIconById(resource.getResourceId());
 		if(resourceIconId!=null)
-		resourceService.removeRelIconById(resource.getRESOURCE_ID(),resourceIconId);
+		resourceService.removeRelIconById(resource.getResourceId(),resourceIconId);
 	}
 	
 	@RequestMapping("saveResource")
 	@ResponseBody
 	public void save(ResourceVO resource,String resourceIconId) {
-		resourceService.addRelIcon(resource.getRESOURCE_ID(), resourceIconId);
+		resourceService.addRelIcon(resource.getResourceId(), resourceIconId);
 		resourceService.save(resource);
 	}
 	
 	@RequestMapping("modify")
 	@ResponseBody
 	public void modifyByPrimaryColumn(ResourceVO resource,String resourceIconId){
-		resourceService.modifyRelIconById(resource.getRESOURCE_ID(), resourceIconId);
+		resourceService.modifyRelIconById(resource.getResourceId(), resourceIconId);
 		resourceService.modifyByPrimaryColumn(resource);
 	}
 }

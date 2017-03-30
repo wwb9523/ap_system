@@ -1,27 +1,27 @@
 package com.sinosoft.ap.system.resourceicon.domain;
 
 public class ResourceIconVO {
-	private String RESOURCE_ICON_ID;
-	private String RESOURCE_ICON_NAME;
-	private String RESOURCE_ICON_ADDRESS;
+	private String resourceIconId;
+	private String resourceIconName;
+	private String resourceIconAddress;
+	public String getResourceIconId() {
+		return resourceIconId;
+	}
+	public void setResourceIconId(String resourceIconId) {
+		this.resourceIconId = resourceIconId;
+	}
+	public String getResourceIconName() {
+		return resourceIconName;
+	}
+	public void setResourceIconName(String resourceIconName) {
+		this.resourceIconName = resourceIconName;
+	}
+	public String getResourceIconAddress() {
+		return resourceIconAddress;
+	}
+	public void setResourceIconAddress(String resourceIconAddress) {
+		this.resourceIconAddress = resourceIconAddress;
+	}
 	
-	public String getRESOURCE_ICON_ID() {
-		return RESOURCE_ICON_ID;
-	}
-	public void setRESOURCE_ICON_ID(String rESOURCE_ICON_ID) {
-		RESOURCE_ICON_ID = rESOURCE_ICON_ID;
-	}
-	public String getRESOURCE_ICON_NAME() {
-		return RESOURCE_ICON_NAME;
-	}
-	public void setRESOURCE_ICON_NAME(String rESOURCE_ICON_NAME) {
-		RESOURCE_ICON_NAME = rESOURCE_ICON_NAME;
-	}
-	public String getRESOURCE_ICON_ADDRESS() {
-		return RESOURCE_ICON_ADDRESS;
-	}
-	public void setRESOURCE_ICON_ADDRESS(String rESOURCE_ICON_ADDRESS) {
-		RESOURCE_ICON_ADDRESS = rESOURCE_ICON_ADDRESS;
-	}
 	
 }
