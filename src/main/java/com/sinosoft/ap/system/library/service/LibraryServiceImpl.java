@@ -14,37 +14,9 @@ public class LibraryServiceImpl implements LibraryService{
 	@Autowired
 	private LibraryRepository libraryRepository;
 	
-	/**
-	 * 获取全部的字典信息
-	 * @return
-	 */
-	@Override
-	public List<LibraryEntity> findLibraryInfoAll(){
-		return null;
-	}
 	
-	/**
-<<<<<<< HEAD
-	 * 根据id删除字典信息
-=======
-	 * 根据id获取字典信息
->>>>>>> 37025cec6bed888210871f3031eee274de268890
-	 * @param id
-	 * @return
-	 */
-	@Override
-<<<<<<< HEAD
-	public boolean deleteLibraruById(String id){
-		int count=libraryRepository.deleteLibraruById(id);
-		if (count>0){
-			return true;
-		}else{
-			return false;
-		}
-=======
 	public LibraryVO findLibraryById(String id) {
 		return libraryRepository.findLibraryById(id);
->>>>>>> 37025cec6bed888210871f3031eee274de268890
 	}
 	
 	/**

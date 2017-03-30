@@ -2,7 +2,7 @@ package com.sinosoft.ap.system.organization.domain;
 
 import java.sql.Date;
 
-public class OrganizationEntity {
+public class OrganizationVO {
 	private String organId;
 	private String organName;
 	private String organCode;
