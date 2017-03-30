@@ -43,7 +43,7 @@ public class LoginController {
 			rediect.addFlashAttribute("errorText", "您的账号或密码输入错误!");
 			return "redirect:/login/login";
 		}
-		return "redirect:/index";
+		return "test.jsp";
 	}
 	
 	/**
@@ -63,6 +63,6 @@ public class LoginController {
 	 */
 	@RequestMapping("test")
 	public String test() {
-		return "login.jsp";
+		return "index.jsp";
 	}
 }
