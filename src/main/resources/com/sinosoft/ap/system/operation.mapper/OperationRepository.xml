@@ -3,9 +3,20 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sinosoft.ap.system.operation.domain.OperationRepository">
 
-	<select id="findOperationById" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
+	<select id="selectList" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
 		SELECT * FROM APS_OPERATION where RESOURCE_ID = #{id}
 	</select>
 
-
+	<select id="delete" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
+		delete FROM APS_OPERATION where RESOURCE_ID = #{id}
+	</select>
+	
+	<select id="insert" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
+		insert into APS_OPERATION values 
+	</select>
+	
+	<select id="updateByPrimaryColumn" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
+		update APS_OPERATION set  
+	</select>
+	
 </mapper>

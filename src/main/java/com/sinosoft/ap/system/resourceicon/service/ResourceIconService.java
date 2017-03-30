@@ -1,5 +1,7 @@
 package com.sinosoft.ap.system.resourceicon.service;
 
+import java.util.List;
+
 import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
 
 
@@ -11,5 +13,6 @@ public interface ResourceIconService {
 	 * @param userId
 	 * @return
 	 */
-	ResourceIconEntity findIconByUserId(String id);
+	void remove(ResourceIconEntity icon);
+	void save(ResourceIconEntity icon);
 }

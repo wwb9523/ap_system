@@ -12,6 +12,7 @@ import com.sinosoft.ap.system.operation.domain.OperationEntity;
 import com.sinosoft.ap.system.operation.domain.OperationRepository;
 import com.sinosoft.ap.system.permission.domain.ModuleInfo;
 import com.sinosoft.ap.system.permission.service.ModuleService;
+import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
 import com.sinosoft.ap.system.user.domain.UserInfo;
 import com.sinosoft.ap.system.user.domain.UserMapper;
 
@@ -25,8 +26,24 @@ public class OperationServiceImpl implements OperationrService{
 	 * @param userId
 	 * @return
 	 */
+	
 	@Override
-	public OperationEntity findOperationById(String id) {
-		return operationRepository.findOperationById(id);
+	public List<OperationEntity> findList(OperationEntity operation) {
+		return operationRepository.selectList(operation);
+	}
+	
+	@Override
+	public  void remove(OperationEntity operation){
+		operationRepository.delete(operation);
+	}
+	
+	@Override
+	public void save(OperationEntity operation){
+		operationRepository.insert(operation);
+	}
+	
+	@Override
+	public void modifyByPrimaryColumn(OperationEntity operation){
+		operationRepository.updateByPrimaryColumn(operation);
 	}
 }

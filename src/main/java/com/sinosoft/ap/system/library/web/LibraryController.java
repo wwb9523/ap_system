@@ -1,5 +1,7 @@
 package com.sinosoft.ap.system.library.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +27,7 @@ public class LibraryController {
 	@ResponseBody
 	public String updateInfoPage(String id) {
 //		ModelAndView mav=new ModelAndView("library/jumpInfoPage.jsp");
-		LibraryEntity libraryEntity=libraryService.findLibraryById("1");
+		List<LibraryEntity> libraryEntity=libraryService.findLibraryInfoAll();
 //		mav.addObject("libraryEntity", libraryEntity);
 		return libraryEntity.getLibraryCode();
 	}

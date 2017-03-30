@@ -1,5 +1,7 @@
 package com.sinosoft.ap.system.resourceicon.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +17,15 @@ public class ResourceIconServiceImpl implements ResourceIconService{
 	/**
 	 * 
 	 */
+	
 	@Override
-	public ResourceIconEntity findIconByUserId(String id) {
-		return resourceIconRepository.findIconByUserId(id);
+	public  void remove(ResourceIconEntity icon){
+		resourceIconRepository.delete(icon);
 	}
+	
+	@Override
+	public void save(ResourceIconEntity icon){
+		resourceIconRepository.insert(icon);
+	}
+	
 }
