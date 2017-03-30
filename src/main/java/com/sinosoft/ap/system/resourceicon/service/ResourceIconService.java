@@ -2,7 +2,8 @@ package com.sinosoft.ap.system.resourceicon.service;
 
 import java.util.List;
 
-import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
+import com.sinosoft.ap.system.resourceicon.domain.ResourceIconVO;
+
 
 
 
@@ -13,6 +14,6 @@ public interface ResourceIconService {
 	 * @param userId
 	 * @return
 	 */
-	void remove(ResourceIconEntity icon);
-	void save(ResourceIconEntity icon);
+	void remove(ResourceIconVO icon);
+	void save(ResourceIconVO icon);
 }
