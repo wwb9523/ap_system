@@ -44,11 +44,6 @@ public class PermissionManage {
 		permissionService.save(permissionVO);
 	}
 	
-	@RequestMapping("/changePermissionInfo")
-	@ResponseBody
-	public void modifyByPrimaryColumn(PermissionVO permissionVO){
-		permissionService.modifyByPrimaryColumn(permissionVO);
-	}
 	
 	/**
 	 * 许可关联操作

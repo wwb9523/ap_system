@@ -36,11 +36,6 @@ public class PermissionServiceImpl implements PermissionService{
 		permissionRepository.insert(permissionVO);
 	}
 
-	@Override
-	public void modifyByPrimaryColumn(PermissionVO permissionVO) {
-		permissionRepository.updateByPrimaryColumn(permissionVO);
-		
-	}
 
 	@Override
 	public void savePermissionOpe(String permissionId, String operationId) {

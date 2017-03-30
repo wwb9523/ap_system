@@ -42,7 +42,6 @@ public interface PermissionService {
 	
 	public void save(PermissionVO permissionVO);
 	
-	public void modifyByPrimaryColumn(PermissionVO permissionVO);
 	
 	public void savePermissionOpe(String permissionId,String operationId);
 	

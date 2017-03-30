@@ -35,13 +35,12 @@ public interface PermissionRepository {
 	List<String> findPermissionUrlByRole(String account);
 	
 	
-public PermissionVO selectList(String permissionId);
+	public PermissionVO selectList(String permissionId);
 	
 	public void delete(String permissionId);
 	
 	public void insert(PermissionVO permissionVO);
 	
-	public void updateByPrimaryColumn(PermissionVO permissionVO);
 	
 	public void insertPermissionOpe(@Param("permissionId")String permissionId,@Param("operationId")String operationId);
 	
