@@ -1,6 +1,6 @@
 package com.sinosoft.ap.system.userpassword.domain;
 
-public class UserPasswordEntity {
+public class UserPasswordVO {
 	private String USER_PASSWORD_ID;
 	private String USER_ID;
 	private String USER_PASSWORD;
