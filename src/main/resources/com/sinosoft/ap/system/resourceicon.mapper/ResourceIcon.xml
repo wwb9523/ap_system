@@ -3,12 +3,13 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sinosoft.ap.system.resourceicon.domain.ResourceIconRepository">
 
-	<select id="insert" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity">
-		insert into APS_RESOURCE_ICON(RESOURCE_ICON_ID,RESOURCE_ICON_NAME,RESOURCE_ICON_ADDRESS) values()
-	</select>
+	<insert id="insert" parameterType="com.sinosoft.ap.system.resourceicon.domain.ResourceIconVO">
+		insert into APS_RESOURCE_ICON(RESOURCE_ICON_ID,RESOURCE_ICON_NAME,RESOURCE_ICON_ADDRESS) values(#{resourceIcon.RESOURCE_ICON_ID},#{resourceIcon.RESOURCE_ICON_NAME},
+		#{resourceIcon.RESOURCE_ICON_ADDRESS})
+	</insert>
 
-	<select id="delete" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity">
-		delete from APS_RESOURCE_ICON where 
-	</select>
+	<delete id="delete" parameterType="com.sinosoft.ap.system.resourceicon.domain.ResourceIconVO">
+		delete from APS_RESOURCE_ICON where RESOURCE_ICON_ID=#{resourceIcon.RESOURCE_ICON_ID}
+	</delete>
 
 </mapper>
