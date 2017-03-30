@@ -51,7 +51,6 @@ public class URLPermissionsFilter extends PermissionsAuthorizationFilter{
 	private String getRequestUrl(ServletRequest request) {
 		HttpServletRequest req = (HttpServletRequest)request;
 		String queryString = req.getQueryString();
-
 		queryString = StringUtils.isBlank(queryString)?"": "?"+queryString;
 		return req.getRequestURI()+queryString;
 	}
