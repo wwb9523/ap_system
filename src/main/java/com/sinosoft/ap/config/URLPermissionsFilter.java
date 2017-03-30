@@ -15,13 +15,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.sinosoft.ap.system.user.service.UserService;
+import com.sinosoft.ap.system.userlogin.service.UserLoginService;
 
 
 
 @Component("urlPermissionsFilter")
 public class URLPermissionsFilter extends PermissionsAuthorizationFilter{
 	@Autowired
-	private UserService userService;
+	private UserLoginService userLoginService;
 
 	@Override
 	public boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws IOException {
@@ -36,7 +37,7 @@ public class URLPermissionsFilter extends PermissionsAuthorizationFilter{
 				|| StringUtils.equals(curUrl, "/unauthor")) {
 			return true;
 		}
-		List<String> urls = userService.findPermissionUrl(subject.getPrincipal().toString());
+		List<String> urls = userLoginService.findPermissionUrl(subject.getPrincipal().toString());
 		return urls.contains(curUrl);
 	}
 	

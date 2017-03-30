@@ -16,6 +16,8 @@ import org.springframework.stereotype.Component;
 
 import com.sinosoft.ap.system.user.domain.UserInfo;
 import com.sinosoft.ap.system.user.service.UserService;
+import com.sinosoft.ap.system.userlogin.domain.UserLoginVO;
+import com.sinosoft.ap.system.userlogin.service.UserLoginService;
 
 
 /**
@@ -26,7 +28,7 @@ import com.sinosoft.ap.system.user.service.UserService;
 @Component("userRealm")
 public class UserRealm extends AuthorizingRealm {
 	@Autowired
-	private UserService userService;
+	private UserLoginService userLoginService;
 
 	public UserRealm() {
 		setName("UserRealm");
@@ -40,7 +42,7 @@ public class UserRealm extends AuthorizingRealm {
 		String username = (String) principals.getPrimaryPrincipal();
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 		//add Permission Resources
-		info.setStringPermissions(userService.findPermissions(username));
+		info.setStringPermissions(userLoginService.findPermissions(username));
 		//add Roles String[Set<String> roles]
 		//info.setRoles(roles);
 		return info;
@@ -51,12 +53,12 @@ public class UserRealm extends AuthorizingRealm {
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		UsernamePasswordToken upt = (UsernamePasswordToken) token;
 		String userName = upt.getUsername();
-		UserInfo user = userService.findByAccount(userName);
+		UserLoginVO userLoginVO = userLoginService.findByAccount(userName);
 
-		if (user == null) {
+		if (userLoginVO == null) {
 			throw new UnknownAccountException();
 		}
-		SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(userName, user.getPassword(), getName());
+		SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(userName, userLoginVO.getPassword(), getName());
 		return info;
 	}
 }
