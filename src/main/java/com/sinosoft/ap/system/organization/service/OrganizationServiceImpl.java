@@ -52,4 +52,40 @@ public class OrganizationServiceImpl implements OrganizationService{
 		return false;
 	}
 
+	@Override
+	public boolean insertOranizationUser(String u_id, String o_id) {
+		int count = organizationRepository.insertOranizationUser(u_id, o_id);
+		if (count>0){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean insertOranizationPermisson(String p_id, String o_id) {
+		int count = organizationRepository.insertOranizationPermisson(p_id, o_id);
+		if (count>0){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean removeOrganizationUser(String id) {
+		int count = organizationRepository.removeOrganizationUser(id);
+		if (count>0){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean removeOrganizationPermission(String id) {
+		int count = organizationRepository.removeOrganizationPermission(id);
+		if (count>0){
+			return true;
+		}
+		return false;
+	}
+
 }
