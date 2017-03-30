@@ -14,7 +14,7 @@ import com.sinosoft.ap.system.resourceicon.service.ResourceIconService;
 
 @Controller
 @RequestMapping("/resourceIcon")
-public class ResourceIconController {
+public class ResourceIconManage {
 	
 	@Autowired
 	private ResourceIconService resourceIconService;

@@ -14,7 +14,7 @@ import com.sinosoft.ap.system.resource.service.ResourceService;
 
 @Controller
 @RequestMapping("/resource")
-public class ResourceController {
+public class ResourceManage {
 	
 	@Autowired
 	private ResourceService resourceService;

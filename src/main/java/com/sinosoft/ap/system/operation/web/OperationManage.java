@@ -14,7 +14,7 @@ import com.sinosoft.ap.system.operation.service.OperationService;
 
 @Controller
 @RequestMapping("/operation")
-public class OperationController {
+public class OperationManage {
 	
 	@Autowired
 	private OperationService operationService;
