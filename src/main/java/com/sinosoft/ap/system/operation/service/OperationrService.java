@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Set;
 
 import com.sinosoft.ap.system.operation.domain.OperationVO;
-import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
 import com.sinosoft.ap.system.user.domain.UserInfo;
 
 public interface OperationrService {

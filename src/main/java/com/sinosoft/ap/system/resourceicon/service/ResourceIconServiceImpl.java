@@ -19,13 +19,13 @@ public class ResourceIconServiceImpl implements ResourceIconService{
 	 */
 	
 	@Override
-	public  void remove(ResourceIconVO icon){
-		resourceIconRepository.delete(icon);
+	public  void remove(ResourceIconVO resourceIcon){
+		resourceIconRepository.delete(resourceIcon);
 	}
 	
 	@Override
-	public void save(ResourceIconVO icon){
-		resourceIconRepository.insert(icon);
+	public void save(ResourceIconVO resourceIcon){
+		resourceIconRepository.insert(resourceIcon);
 	}
 	
 }

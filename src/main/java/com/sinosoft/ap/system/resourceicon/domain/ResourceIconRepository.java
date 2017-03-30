@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Select;
 
 
 public interface ResourceIconRepository {
-	void delete(ResourceIconVO icon);
-	void insert(ResourceIconVO icon);
+	void delete(ResourceIconVO resourceIcon);
+	void insert(ResourceIconVO resourceIcon);
 }

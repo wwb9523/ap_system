@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Select;
 
-import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
 import com.sinosoft.ap.system.user.domain.UserInfo;
 
 public interface OperationRepository {

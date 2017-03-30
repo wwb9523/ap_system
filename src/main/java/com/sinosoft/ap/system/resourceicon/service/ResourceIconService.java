@@ -14,6 +14,6 @@ public interface ResourceIconService {
 	 * @param userId
 	 * @return
 	 */
-	void remove(ResourceIconVO icon);
-	void save(ResourceIconVO icon);
+	void remove(ResourceIconVO resourceIcon);
+	void save(ResourceIconVO resourceIcon);
 }
