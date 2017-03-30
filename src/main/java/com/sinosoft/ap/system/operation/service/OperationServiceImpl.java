@@ -28,17 +28,20 @@ public class OperationServiceImpl implements OperationService{
 	}
 	
 	@Override
-	public  void remove(OperationVO operation){
-		operationRepository.delete(operation);
+	public  int remove(OperationVO operation){
+		int count=operationRepository.delete(operation);
+		return count;
 	}
 	
 	@Override
-	public void save(OperationVO operation){
-		operationRepository.insert(operation);
+	public int save(OperationVO operation){
+		int count=operationRepository.insert(operation);
+		return count;
 	}
 	
 	@Override
-	public void modifyByPrimaryColumn(OperationVO operation){
-		operationRepository.updateByPrimaryColumn(operation);
+	public int modifyByPrimaryColumn(OperationVO operation){
+		int count=operationRepository.updateByPrimaryColumn(operation);
+		return count;
 	}
 }
