@@ -9,11 +9,11 @@ public class OperationVO {
 	private String OPERATION_DESC;
 	private Date OPERATION_TIME;
 	
-	public String getOPERETION_ID() {
+	public String getOPERATION_ID() {
 		return OPERATION_ID;
 	}
-	public void setOPERETION_ID(String oPERETION_ID) {
-		OPERATION_ID = oPERETION_ID;
+	public void setOPERATION_ID(String oPERATION_ID) {
+		OPERATION_ID = oPERATION_ID;
 	}
 	public String getRESOURCE_ID() {
 		return RESOURCE_ID;
@@ -21,22 +21,24 @@ public class OperationVO {
 	public void setRESOURCE_ID(String rESOURCE_ID) {
 		RESOURCE_ID = rESOURCE_ID;
 	}
-	public String getOPERETION_NAME() {
+	public String getOPERATION_NAME() {
 		return OPERATION_NAME;
 	}
-	public void setOPERETION_NAME(String oPERETION_NAME) {
-		OPERATION_NAME = oPERETION_NAME;
+	public void setOPERATION_NAME(String oPERATION_NAME) {
+		OPERATION_NAME = oPERATION_NAME;
 	}
-	public String getOPERETION_DESC() {
+	public String getOPERATION_DESC() {
 		return OPERATION_DESC;
 	}
-	public void setOPERETION_DESC(String oPERETION_DESC) {
-		OPERATION_DESC = oPERETION_DESC;
+	public void setOPERATION_DESC(String oPERATION_DESC) {
+		OPERATION_DESC = oPERATION_DESC;
 	}
-	public Date getOPERETION_TIME() {
+	public Date getOPERATION_TIME() {
 		return OPERATION_TIME;
 	}
-	public void setOPERETION_TIME(Date oPERETION_TIME) {
-		OPERATION_TIME = oPERETION_TIME;
+	public void setOPERATION_TIME(Date oPERATION_TIME) {
+		OPERATION_TIME = oPERATION_TIME;
 	}
+	
+	
 }
