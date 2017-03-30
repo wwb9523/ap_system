@@ -13,7 +13,7 @@ import com.sinosoft.ap.system.organization.domain.OrganizationVO;
 import com.sinosoft.ap.system.organization.service.OrganizationService;
 
 @Controller
-@RequestMapping("/organization")
+@RequestMapping("/aporganization")
 public class OrganizationController {
 	
 	@Autowired
@@ -81,7 +81,7 @@ public class OrganizationController {
 	}
 	
 	/**
-	 * 删除组织信息
+	 * 根绝ID删除组织信息
 	 * @param id
 	 * @return
 	 */
@@ -138,7 +138,7 @@ public class OrganizationController {
 	}
 	
 	/**
-	 * 根据用户ID和组织ID取消用户和组织的关系
+	 * 根据用户ID和组织ID取消权限对组织的操作关系
 	 * @param id
 	 * @return
 	 */

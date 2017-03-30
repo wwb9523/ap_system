@@ -13,7 +13,7 @@ import com.sinosoft.ap.system.userpassword.domain.UserPasswordVO;
 import com.sinosoft.ap.system.userpassword.service.UserPasswordService;
 
 @Controller
-@RequestMapping("/userpassword")
+@RequestMapping("/apuserpassword")
 public class UserPasswordController {
 	
 	@Autowired
@@ -74,7 +74,7 @@ public class UserPasswordController {
 	}
 	
 	/**
-	 * 根据用户ID获取登陆密码
+	 * 获取所有登陆密码
 	 * @param id
 	 * @return
 	 */
