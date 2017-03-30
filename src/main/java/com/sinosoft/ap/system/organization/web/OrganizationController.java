@@ -13,7 +13,7 @@ import com.sinosoft.ap.system.organization.domain.OrganizationVO;
 import com.sinosoft.ap.system.organization.service.OrganizationService;
 
 @Controller
-@RequestMapping("/aplibrary")
+@RequestMapping("/organization")
 public class OrganizationController {
 	
 	@Autowired
@@ -97,7 +97,7 @@ public class OrganizationController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("insertInfo")
+	@RequestMapping("insertOranizationUser")
 	@ResponseBody
 	public String insertOranizationUser(String u_id,String o_id) {
 		boolean boo=organizationService.insertOranizationUser(u_id, o_id);
