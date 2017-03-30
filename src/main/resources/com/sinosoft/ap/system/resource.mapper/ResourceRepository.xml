@@ -31,4 +31,15 @@
 		insert into APS_RESOURCE_ICON_REL(RESOURCE_ID,RESOURCE_ICON_ID) values(resourceId,resourceIconId)
 	</insert>
 	
+	<update id="updateRelIconById" parameterType="java.lang.String">
+		update  APS_RESOURCE_ICON_REL set RESOURCE_ICON_ID=resourceIconId where RESOURCE_ID=resourceId
+	</update>
+	
+	<delete id="deleteRelIconById" parameterType="java.lang.String">
+		delete from APS_RESOURCE_ICON_REL where RESOURCE_ID=resourceId and  RESOURCE_ICON_ID=resourceIconId
+	</delete>
+	
+	<select id="selectRelIconById" parameterType="java.lang.String">
+		select RESOURCE_ICON_ID from  APS_RESOURCE_ICON_REL where RESOURCE_ID=resourceId
+	</select>
 </mapper>

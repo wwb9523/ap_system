@@ -12,6 +12,7 @@ public class ResourceVO {
 	private int RESOURCE_LEVEL;
 	private Date RESOURCE_CREATTIME;
 	private int RESOURCE_SORT;
+	
 	public String getRESOURCE_ID() {
 		return RESOURCE_ID;
 	}

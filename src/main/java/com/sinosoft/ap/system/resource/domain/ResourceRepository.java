@@ -18,4 +18,7 @@ public interface ResourceRepository {
 	void insert(ResourceVO resource);
 	void updateByPrimaryColumn(ResourceVO resource);
 	void insertRelIcon(@Param("resourceId")String resourceId,@Param("resourceIconId")String resourceIconId);
+	void updateRelIconById(@Param("resourceId")String resourceId,@Param("resourceIconId")String resourceIconId);
+	void deleteRelIconById(@Param("resourceId")String resourceId,@Param("resourceIconId")String resourceIconId);
+	String selectRelIconById(String resourceId);
 }
