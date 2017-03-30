@@ -10,7 +10,7 @@ import com.sinosoft.ap.system.permission.service.PermissionService;
 
 
 @Controller
-@RequestMapping("/permission")
+@RequestMapping("/appermission")
 public class PermissionManage {
 	@Autowired
 	private PermissionService permissionService;

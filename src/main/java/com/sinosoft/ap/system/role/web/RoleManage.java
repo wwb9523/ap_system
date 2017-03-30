@@ -9,7 +9,7 @@ import com.sinosoft.ap.system.role.domain.RoleVO;
 import com.sinosoft.ap.system.role.service.RoleService;
 
 @Controller
-@RequestMapping("/role")
+@RequestMapping("/aprole")
 public class RoleManage {
 	
 	@Autowired
