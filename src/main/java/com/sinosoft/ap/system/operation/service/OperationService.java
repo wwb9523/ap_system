@@ -13,7 +13,7 @@ public interface OperationService {
 	 * @return
 	 */
 	List<OperationVO> findList(OperationVO operation);
-	int remove(OperationVO operation);
-	int save(OperationVO operation);
-	int modifyByPrimaryColumn(OperationVO operation);
+	void remove(OperationVO operation);
+	void save(OperationVO operation);
+	void modifyByPrimaryColumn(OperationVO operation);
 }

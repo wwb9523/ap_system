@@ -1,27 +1,37 @@
 package com.sinosoft.ap.system.userpassword.domain;
 
+import java.sql.Date;
+
+import com.sinosoft.ap.util.MD5Translate;
+
 public class UserPasswordVO {
-	private String USER_PASSWORD_ID;
-	private String USER_ID;
-	private String USER_PASSWORD;
-	
-	public String getUSER_PASSWORD_ID() {
-		return USER_PASSWORD_ID;
+	private String userPasswordId;
+	private String userId;
+	private String userPassword;
+	private Date userPasswordCreatetime;
+	public String getUserPasswordId() {
+		return userPasswordId;
 	}
-	public void setUSER_PASSWORD_ID(String uSER_PASSWORD_ID) {
-		USER_PASSWORD_ID = uSER_PASSWORD_ID;
+	public void setUserPasswordId(String userPasswordId) {
+		this.userPasswordId = userPasswordId;
 	}
-	public String getUSER_ID() {
-		return USER_ID;
+	public String getUserId() {
+		return userId;
 	}
-	public void setUSER_ID(String uSER_ID) {
-		USER_ID = uSER_ID;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
-	public String getUSER_PASSWORD() {
-		return USER_PASSWORD;
+	public String getUserPassword() {
+		return userPassword;
 	}
-	public void setUSER_PASSWORD(String uSER_PASSWORD) {
-		USER_PASSWORD = uSER_PASSWORD;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = MD5Translate.MD5(userPassword);
+	}
+	public Date getUserPasswordCreatetime() {
+		return userPasswordCreatetime;
+	}
+	public void setUserPasswordCreatetime(Date userPasswordCreatetime) {
+		this.userPasswordCreatetime = userPasswordCreatetime;
 	}
 	
 }

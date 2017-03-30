@@ -1,10 +1,13 @@
 package com.sinosoft.ap.system.userhead.domain;
 
-import org.apache.ibatis.annotations.Select;
-
-import com.sinosoft.ap.system.userhead.domain.UserHeadEntity;
-
 
 public interface UserHeadRepository {
-	UserHeadEntity findHeadByUserId(String id);
+	
+	public UserHeadVO selectList(String userId);
+	
+	public void delete(String userHeadId);
+	
+	public void insert(UserHeadVO userHeadVO);
+	
+	public void updateByPrimaryColumn(UserHeadVO userHeadVO);
 }

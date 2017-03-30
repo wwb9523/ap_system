@@ -1,13 +1,18 @@
 package com.sinosoft.ap.system.userpassword.service;
 
-import com.sinosoft.ap.system.userpassword.domain.UserPasswordEntity;
+import java.util.List;
+
+import com.sinosoft.ap.system.userpassword.domain.UserPasswordVO;
 
 
 public interface UserPasswordService {
-	/**
-	 * 获取角色模块
-	 * @param userId
-	 * @return
-	 */
-	UserPasswordEntity findPasswordById(String id);
+	boolean insert(UserPasswordVO userPasswordVO);
+	
+	boolean delete(UserPasswordVO userPasswordVO);
+	
+	boolean update(UserPasswordVO userPasswordVO);
+	
+	UserPasswordVO selectById(UserPasswordVO userPasswordVO);
+	
+	List<UserPasswordVO> selectAll();
 }

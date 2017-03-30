@@ -32,39 +32,33 @@ public class ResourceServiceImpl implements ResourceService{
 	}
 	
 	@Override
-	public  int remove(ResourceVO resource){
-		int count=resourceRepository.delete(resource);
-		return count;
+	public  void remove(ResourceVO resource){
+		resourceRepository.delete(resource);
 	}
 	
 	@Override
-	public int save(ResourceVO resource){
-		int count=resourceRepository.insert(resource);
-		return count;
+	public void save(ResourceVO resource){
+		resourceRepository.insert(resource);
 	}
 	
 	@Override
-	public int modifyByPrimaryColumn(ResourceVO resource){
-		int count=resourceRepository.updateByPrimaryColumn(resource);
-		return count;
+	public void modifyByPrimaryColumn(ResourceVO resource){
+		resourceRepository.updateByPrimaryColumn(resource);
 	}
 	
 	@Override
-	public int addRelIcon(ResourceVO resource){
-		int count=resourceRepository.insertRelIcon(resource);
-		return count;
+	public void addRelIcon(String resourceId,String resourceIconId){
+		resourceRepository.insertRelIcon(resourceId,resourceIconId);
 	}
 	
 	@Override
-	public int modifyRelIconById(ResourceVO resource){
-		int count=resourceRepository.updateRelIconById(resource);
-		return count;
+	public void modifyRelIconById(String resourceId,String resourceIconId){
+		resourceRepository.updateRelIconById(resourceId,resourceIconId);
 	}
 	
 	@Override
-	public int removeRelIconById(ResourceVO resource){
-		int count=resourceRepository.updateRelIconById(resource);
-		return count;
+	public void removeRelIconById(String resourceId,String resourceIconId){
+		resourceRepository.updateRelIconById(resourceId,resourceIconId);
 	}
 	
 	@Override

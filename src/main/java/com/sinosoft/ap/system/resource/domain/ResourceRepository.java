@@ -13,11 +13,11 @@ public interface ResourceRepository {
 	 */
 	ResourceVO selectAll();
 	List<ResourceVO> selectList(ResourceVO resource);
-	int delete(ResourceVO resource);
-	int insert(ResourceVO resource);
-	int updateByPrimaryColumn(ResourceVO resource);
-	int insertRelIcon(ResourceVO resource);
-	int updateRelIconById(ResourceVO resource);
-	int deleteRelIconById(ResourceVO resource);
+	void delete(ResourceVO resource);
+	void insert(ResourceVO resource);
+	void updateByPrimaryColumn(ResourceVO resource);
+	void insertRelIcon(@Param("resourceId")String resourceId,@Param("resourceIconId")String resourceIconId);
+	void updateRelIconById(@Param("resourceId")String resourceId,@Param("resourceIconId")String resourceIconId);
+	void deleteRelIconById(@Param("resourceId")String resourceId,@Param("resourceIconId")String resourceIconId);
 	String selectRelIconById(String resourceId);
 }
