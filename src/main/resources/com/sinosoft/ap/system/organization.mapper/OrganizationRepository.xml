@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sinosoft.ap.system.operation.domain.OperationRepository">
-
-	<select id="selectList" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
-		SELECT * FROM APS_OPERATION where RESOURCE_ID = #{id}
-	</select>
-
-	<select id="delete" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
-		delete FROM APS_OPERATION where RESOURCE_ID = #{id}
+<mapper namespace="com.sinosoft.ap.system.organization.domain.OrganizationRepository">
+	
+	<select id="selectById" parameterType="java.lang.String">
+		select * from APS_ORGANIZATION where ORGAN_ID =# {id}
 	</select>
 	
-	<select id="insert" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
-		insert into APS_OPERATION values 
+	<select id="selectList" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.organization.domain.OrganizationVO">
+		SELECT * FROM APS_ORGANIZATION where ORGAN_PARENT_ID = #{ORGAN_PARENT_ID}
 	</select>
+
+	<delete id="delete" parameterType="com.sinosoft.ap.system.organization.domain.OrganizationVO">
+		delete FROM APS_ORGANIZATION where ORGAN_ID = #{ORGAN_ID}
+	</delete>
 	
-	<select id="updateByPrimaryColumn" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.operation.domain.OperationEntity">
-		update APS_OPERATION set  
-	</select>
+	<insert id="insert" parameterType="com.sinosoft.ap.system.organization.domain.OrganizationVO">
+		insert into APS_ORGANIZATION(ORGAN_ID,ORGAN_NAME,ORGAN_CODE,ORGAN_SORT,ORGAN_PARENT_ID,ORGAN_LEVEL,ORGAN_DESC) values(#{ORGAN_ID},#{ORGAN_NAME},#{ORGAN_CODE},#{ORGAN_SORT},#{ORGAN_PARENT_ID},#{ORGAN_LEVEL},#{ORGAN_DESC})
+	</insert>
+	
+	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.organization.domain.OrganizationVO">
+		update APS_ORGANIZATION set  ORGAN_NAME = #{ORGAN_NAME},ORGAN_CODE=#{ORGAN_CODE},ORGAN_SORT=#{ORGAN_SORT},ORGAN_PARENT_ID=#{ORGAN_PARENT_ID},ORGAN_LEVEL#{ORGAN_LEVEL},ORGAN_DESC=#{ORGAN_DESC} where ORGAN_ID = #{ORGAN_ID}
+	</update>
 	
 </mapper>
