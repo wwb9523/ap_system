@@ -2,41 +2,41 @@ package com.sinosoft.ap.system.role.domain;
 
 import java.sql.Date;
 
-public class RoleEntity {
-	private String ROLE_ID;
-	private String ROLE_NAME;
-	private String ROLE_CODE;
-	private String ROLE_DESC;
-	private Date ROLE_CREATTIME;
+public class RoleVO {
+	private String roleId;
+	private String roleName;
+	private String roleCode;
+	private String roleDesc;
+	private Date roleCreattime;
 	
-	public String getROLE_ID() {
-		return ROLE_ID;
+	public String getRoleId() {
+		return roleId;
 	}
-	public void setROLE_ID(String rOLE_ID) {
-		ROLE_ID = rOLE_ID;
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
 	}
-	public String getROLE_NAME() {
-		return ROLE_NAME;
+	public String getRoleName() {
+		return roleName;
 	}
-	public void setROLE_NAME(String rOLE_NAME) {
-		ROLE_NAME = rOLE_NAME;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
-	public String getROLE_CODE() {
-		return ROLE_CODE;
+	public String getRoleCode() {
+		return roleCode;
 	}
-	public void setROLE_CODE(String rOLE_CODE) {
-		ROLE_CODE = rOLE_CODE;
+	public void setRoleCode(String roleCode) {
+		this.roleCode = roleCode;
 	}
-	public String getROLE_DESC() {
-		return ROLE_DESC;
+	public String getRoleDesc() {
+		return roleDesc;
 	}
-	public void setROLE_DESC(String rOLE_DESC) {
-		ROLE_DESC = rOLE_DESC;
+	public void setRoleDesc(String roleDesc) {
+		this.roleDesc = roleDesc;
 	}
 	public Date getROLE_CREATTIME() {
-		return ROLE_CREATTIME;
+		return roleCreattime;
 	}
-	public void setROLE_CREATTIME(Date rOLE_CREATTIME) {
-		ROLE_CREATTIME = rOLE_CREATTIME;
+	public void setROLE_CREATTIME(Date roleCreattime) {
+		this.roleCreattime = roleCreattime;
 	}
 }

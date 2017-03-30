@@ -6,7 +6,7 @@ public class UserLoginVO {
 	private String userAccount;
 	private String userMaile;
 	private String userTelnumber;
-	private String password;
+	private String userPassword;
 	
 	public void setUserId(String userId){
 		this.userId=userId;
@@ -42,11 +42,11 @@ public class UserLoginVO {
 	public String getUserTelnumber(){
 		return this.userTelnumber;
 	}
+	public String getUserPassword() {
+		return userPassword;
+	}
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
 	
-	public void setPassword(String password){
-		this.password=password;
-	}
-	public String getPassword(){
-		return this.password;
-	}
 }

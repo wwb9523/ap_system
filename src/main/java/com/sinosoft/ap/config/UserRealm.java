@@ -58,7 +58,7 @@ public class UserRealm extends AuthorizingRealm {
 		if (userLoginVO == null) {
 			throw new UnknownAccountException();
 		}
-		SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(userName, userLoginVO.getPassword(), getName());
+		SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(userName, userLoginVO.getUserPassword(), getName());
 		return info;
 	}
 }

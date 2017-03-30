@@ -3,39 +3,39 @@ package com.sinosoft.ap.system.permission.domain;
 import java.sql.Date;
 
 public class PermissionVO {
-	private String PERMISSION_ID;
-	private String PERMISSION_NAME;
-	private String PERMISSION_CODE;
-	private String PERMISSION_DESC;
-	private Date PERMISSION_CREATTIME;
-	public String getPERMISSION_ID() {
-		return PERMISSION_ID;
+	private String permissionId;
+	private String permissionName;
+	private String permissionCode;
+	private String permissionDesc;
+	private Date permissionCreattime;
+	public String getPermissionId() {
+		return permissionId;
 	}
-	public void setPERMISSION_ID(String pERMISSION_ID) {
-		PERMISSION_ID = pERMISSION_ID;
+	public void setPermissionId(String permissionId) {
+		this.permissionId = permissionId;
 	}
-	public String getPERMISSION_NAME() {
-		return PERMISSION_NAME;
+	public String getPermissionName() {
+		return permissionName;
 	}
-	public void setPERMISSION_NAME(String pERMISSION_NAME) {
-		PERMISSION_NAME = pERMISSION_NAME;
+	public void setPermissionName(String permissionName) {
+		this.permissionName = permissionName;
 	}
-	public String getPERMISSION_CODE() {
-		return PERMISSION_CODE;
+	public String getPermissionCode() {
+		return permissionCode;
 	}
-	public void setPERMISSION_CODE(String pERMISSION_CODE) {
-		PERMISSION_CODE = pERMISSION_CODE;
+	public void setPermissionCode(String permissionCode) {
+		this.permissionCode = permissionCode;
 	}
-	public String getPERMISSION_DESC() {
-		return PERMISSION_DESC;
+	public String getPermissionDesc() {
+		return permissionDesc;
 	}
-	public void setPERMISSION_DESC(String pERMISSION_DESC) {
-		PERMISSION_DESC = pERMISSION_DESC;
+	public void setPermissionDesc(String permissionDesc) {
+		this.permissionDesc = permissionDesc;
 	}
-	public Date getPERMISSION_CREATTIME() {
-		return PERMISSION_CREATTIME;
+	public Date getPermissionCreattime() {
+		return permissionCreattime;
 	}
-	public void setPERMISSION_CREATTIME(Date pERMISSION_CREATTIME) {
-		PERMISSION_CREATTIME = pERMISSION_CREATTIME;
+	public void setPermissionCreattime(Date permissionCreattime) {
+		this.permissionCreattime = permissionCreattime;
 	}
 }
