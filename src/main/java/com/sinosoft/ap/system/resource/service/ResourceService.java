@@ -2,8 +2,7 @@ package com.sinosoft.ap.system.resource.service;
 
 import java.util.List;
 
-import com.sinosoft.ap.system.library.domain.LibraryEntity;
-import com.sinosoft.ap.system.resource.domain.ResourceEntity;
+import com.sinosoft.ap.system.resource.domain.ResourceVO;
 import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
 
 
@@ -13,8 +12,8 @@ public interface ResourceService {
 	 * @param userId
 	 * @return
 	 */
-	List<ResourceEntity> findList(ResourceEntity resource);
-	void remove(ResourceEntity resource);
-	void save(ResourceEntity resource);
-	void modifyByPrimaryColumn(ResourceEntity resource);
+	List<ResourceVO> findList(ResourceVO resource);
+	void remove(ResourceVO resource);
+	void save(ResourceVO resource);
+	void modifyByPrimaryColumn(ResourceVO resource);
 }

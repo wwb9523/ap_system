@@ -2,7 +2,7 @@ package com.sinosoft.ap.system.resource.domain;
 
 import java.sql.Date;
 
-public class ResourceEntity {
+public class ResourceVO {
 	private String RESOURCE_ID;
 	private String RESOURCE_NAME;
 	private String RESOURCE_TYPE;
