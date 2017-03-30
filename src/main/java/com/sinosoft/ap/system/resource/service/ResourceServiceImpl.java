@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.sinosoft.ap.system.resource.domain.ResourceRepository;
 import com.sinosoft.ap.system.resource.domain.ResourceVO;
-import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
 
 
 @Service

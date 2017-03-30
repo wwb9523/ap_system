@@ -2,8 +2,6 @@ package com.sinosoft.ap.system.resource.domain;
 
 import java.util.List;
 
-import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
-
 public interface ResourceRepository {
 
 	/**

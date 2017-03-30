@@ -3,7 +3,6 @@ package com.sinosoft.ap.system.resource.service;
 import java.util.List;
 
 import com.sinosoft.ap.system.resource.domain.ResourceVO;
-import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
 
 
 public interface ResourceService {
