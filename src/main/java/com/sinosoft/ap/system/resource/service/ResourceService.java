@@ -15,11 +15,11 @@ public interface ResourceService {
 	 */
 	ResourceVO findAll();
 	List<ResourceVO> findList(ResourceVO resource);
-	void remove(ResourceVO resource);
-	void save(ResourceVO resource);
-	void modifyByPrimaryColumn(ResourceVO resource);
-	void addRelIcon(String resourceId,String resourceIconId);
-	void modifyRelIconById(@Param("resourceId")String resourceId,@Param("resourceIconId")String resourceIconId);
-	void removeRelIconById(@Param("resourceId")String resourceId,@Param("resourceIconId")String resourceIconId);
+	int remove(ResourceVO resource);
+	int save(ResourceVO resource);
+	int modifyByPrimaryColumn(ResourceVO resource);
+	int addRelIcon(ResourceVO resource);
+	int modifyRelIconById(ResourceVO resource);
+	int removeRelIconById(ResourceVO resource);
 	String findRelIconById(String resourceId);
 }

@@ -44,20 +44,20 @@ public class ResourceManage {
 		resourceService.remove(resource);
 		String resourceIconId=resourceService.findRelIconById(resource.getResourceId());
 		if(resourceIconId!=null)
-		resourceService.removeRelIconById(resource.getResourceId(),resourceIconId);
+		resourceService.removeRelIconById(resource);
 	}
 	
 	@RequestMapping("saveResource")
 	@ResponseBody
-	public void save(ResourceVO resource,String resourceIconId) {
-		resourceService.addRelIcon(resource.getResourceId(), resourceIconId);
+	public void save(ResourceVO resource) {
+		resourceService.addRelIcon(resource);
 		resourceService.save(resource);
 	}
 	
 	@RequestMapping("modify")
 	@ResponseBody
-	public void modifyByPrimaryColumn(ResourceVO resource,String resourceIconId){
-		resourceService.modifyRelIconById(resource.getResourceId(), resourceIconId);
+	public void modifyByPrimaryColumn(ResourceVO resource){
+		resourceService.modifyRelIconById(resource);
 		resourceService.modifyByPrimaryColumn(resource);
 	}
 }

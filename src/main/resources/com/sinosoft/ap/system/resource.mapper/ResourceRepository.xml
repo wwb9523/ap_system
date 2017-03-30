@@ -8,38 +8,38 @@
 	</select>
 
 	<select id="selectList" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO" resultType="com.sinosoft.ap.system.resource.domain.ResourceVO">
-		SELECT * FROM APS_RESOURCE where RESOURCE_ID = #{resource.resourceId}
+		SELECT * FROM APS_RESOURCE where RESOURCE_ID = #{resourceId}
 	</select>
 
 	<delete id="delete" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO">
-		delete FROM APS_RESOURCE where RESOURCE_ID = #{resource.resourceId}
+		delete FROM APS_RESOURCE where RESOURCE_ID = #{resourceId}
 	</delete>
 	
 	<insert id="insert"  parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO">
 		insert into APS_RESOURCE(RESOURCE_ID,RESOURCE_NAME,RESOURCE_TYPE,RESOURCE_ADDRESS,RESOURCE_PARENT_ID,RESOURCE_DESC,RESOURCE_LEVEL,RESOURCE_SORT) 
-		 values(#{source.resourceId},#{source.resourceName},#{source.resourceType},#{source.resourceAddress},#{source.resourceParentId},#{source.resourceDesc},
-		 #{source.resourceLevel},#{source.resourceSort})
+		 values(#{resourceId},#{resourceName},#{resourceType},#{resourceAddress},#{resourceParentId},#{resourceDesc},
+		 #{resourceLevel},#{resourceSort})
 	</insert>
 	
 	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO">
-		update APS_RESOURCE set RESOURCE_NAME=#{source.resourceName},RESOURCE_TYPE=#{source.resourceType},RESOURCE_ADDRESS=#{source.resourceAddress},
-		RESOURCE_PARENT_ID=#{source.resourceParentId},RESOURCE_DESC=#{source.resourceDesc},RESOURCE_LEVEL=#{source.resourceLevel},RESOURCE_SORT=#{source.resourceSort}
-		 where RESOURCE_ID=#{source.resourceId}
+		update APS_RESOURCE set RESOURCE_NAME=#{resourceName},RESOURCE_TYPE=#{resourceType},RESOURCE_ADDRESS=#{resourceAddress},
+		RESOURCE_PARENT_ID=#{resourceParentId},RESOURCE_DESC=#{resourceDesc},RESOURCE_LEVEL=#{resourceLevel},RESOURCE_SORT=#{resourceSort}
+		 where RESOURCE_ID=#{resourceId}
 	</update>
 	
-	<insert id="insertRelIcon" parameterType="java.lang.String">
-		insert into APS_RESOURCE_ICON_REL(RESOURCE_ID,RESOURCE_ICON_ID) values(resourceId,resourceIconId)
+	<insert id="insertRelIcon" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO">
+		insert into APS_RESOURCE_ICON_REL(RESOURCE_ID,RESOURCE_ICON_ID) values(#{resourceId},#{resourceIconId})
 	</insert>
 	
-	<update id="updateRelIconById" parameterType="java.lang.String">
-		update  APS_RESOURCE_ICON_REL set RESOURCE_ICON_ID=resourceIconId where RESOURCE_ID=resourceId
+	<update id="updateRelIconById" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO">
+		update APS_RESOURCE_ICON_REL set RESOURCE_ICON_ID=#{resourceIconId} where RESOURCE_ID=#{resourceId}
 	</update>
 	
-	<delete id="deleteRelIconById" parameterType="java.lang.String">
-		delete from APS_RESOURCE_ICON_REL where RESOURCE_ID=resourceId and  RESOURCE_ICON_ID=resourceIconId
+	<delete id="deleteRelIconById" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO">
+		delete from APS_RESOURCE_ICON_REL where RESOURCE_ID=#{resourceId} and  RESOURCE_ICON_ID=#{resourceIconId}
 	</delete>
 	
 	<select id="selectRelIconById" parameterType="java.lang.String">
-		select RESOURCE_ICON_ID from  APS_RESOURCE_ICON_REL where RESOURCE_ID=resourceId
+		select RESOURCE_ICON_ID from  APS_RESOURCE_ICON_REL where RESOURCE_ID=#{resourceId}
 	</select>
 </mapper>

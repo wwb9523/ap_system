@@ -12,6 +12,14 @@ public class ResourceVO {
 	private int resourceLevel;
 	private Date resourceCreateTime;
 	private int resourceSort;
+	private String resourceIconId;
+	
+	public String getResourceIconId() {
+		return resourceIconId;
+	}
+	public void setResourceIconId(String resourceIconId) {
+		this.resourceIconId = resourceIconId;
+	}
 	public String getResourceId() {
 		return resourceId;
 	}
