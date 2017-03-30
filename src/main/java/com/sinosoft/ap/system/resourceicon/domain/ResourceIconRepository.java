@@ -5,4 +5,5 @@ import org.apache.ibatis.annotations.Param;
 public interface ResourceIconRepository {
 	void delete(ResourceIconVO resourceIcon);
 	void insert(ResourceIconVO resourceIcon);
+	String selectResourceIconRelById(String resourceIconId);
 }

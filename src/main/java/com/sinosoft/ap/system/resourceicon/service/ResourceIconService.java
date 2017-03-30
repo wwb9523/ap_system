@@ -16,5 +16,5 @@ public interface ResourceIconService {
 	 */
 	void remove(ResourceIconVO resourceIcon);
 	void save(ResourceIconVO resourceIcon);
-	
+	String findResourceIconRelById(String resourceIconId);
 }

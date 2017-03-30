@@ -33,6 +33,7 @@ public class ResourceIconController {
 	@RequestMapping("delete")
 	@ResponseBody
 	public void remove(ResourceIconVO resourceIcon) {
-		resourceIconService.remove(resourceIcon);
+		String resourceId=resourceIconService.findResourceIconRelById(resourceIcon.getRESOURCE_ICON_ID());
+		if(resourceId==null)resourceIconService.remove(resourceIcon);
 	}
 }
