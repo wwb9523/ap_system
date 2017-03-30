@@ -1,6 +1,7 @@
 package com.sinosoft.ap.system.userpassword.web;
 
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,40 @@ public class UserPasswordController {
 		return boo+"";
 	}
 	
+	/**
+	 * 根据用户ID修改登陆密码
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("update")
+	@ResponseBody
+	public String update(UserPasswordVO userPasswordVO) {
+		boolean boo=userPasswordService.update(userPasswordVO);
+//		mav.addObject("libraryEntity", libraryEntity);
+		return boo+"";
+	}
 	
+	/**
+	 * 根据用户ID获取登陆密码
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("selectById")
+	@ResponseBody
+	public String selectById(UserPasswordVO userPasswordVO) {
+		UserPasswordVO userPasswordVO1=userPasswordService.selectById(userPasswordVO);
+		return userPasswordVO1.getUserPassword();
+	}
+	
+	/**
+	 * 根据用户ID获取登陆密码
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("selectAll")
+	@ResponseBody
+	public String selectAll() {
+		List<UserPasswordVO> list=userPasswordService.selectAll();
+		return list.get(0).getUserPassword();
+	}
 }

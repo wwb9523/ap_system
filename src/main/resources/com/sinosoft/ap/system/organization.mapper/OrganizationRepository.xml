@@ -32,10 +32,10 @@
 	</insert>
 	
 	<delete id="removeOrganizationUser">
-		delete from APS_USER_ORGANIZATION_REL where USER_ID = #{id}
+		delete from APS_USER_ORGANIZATION_REL where USER_ID = #{u_id} and ORGAN_ID =#{o_id}
 	</delete>
 	
 	<delete id="removeOrganizationPermission">
-		delete from APS_PERMISSION_ORGAN_REL where ORGAN_ID = #{id}
+		delete from APS_PERMISSION_ORGAN_REL where ORGAN_ID = #{o_id} and PERMISSION_ID = #{p_id}
 	</delete>
 </mapper>

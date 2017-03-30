@@ -24,7 +24,7 @@ public interface OrganizationService {
 	
 	boolean insertOranizationPermisson(String p_id,String o_id);
 	
-	boolean removeOrganizationUser(String id);
+	boolean removeOrganizationUser(String u_id,String o_id);
 	
-	boolean removeOrganizationPermission(String id);
+	boolean removeOrganizationPermission(String o_id,String p_id);
 }
