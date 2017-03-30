@@ -12,7 +12,7 @@ import com.sinosoft.ap.system.operation.domain.OperationRepository;
 import com.sinosoft.ap.system.operation.domain.OperationVO;
 
 @Service
-public class OperationServiceImpl implements OperationrService{
+public class OperationServiceImpl implements OperationService{
 	@Autowired
 	private OperationRepository operationRepository;
 
