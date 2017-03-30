@@ -12,7 +12,7 @@ import com.sinosoft.ap.system.library.domain.LibraryVO;
 import com.sinosoft.ap.system.library.service.LibraryService;
 
 @Controller
-@RequestMapping("/library")
+@RequestMapping("/aplibrary")
 public class LibraryController {
 	
 	@Autowired
