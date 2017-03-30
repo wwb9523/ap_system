@@ -11,7 +11,7 @@
 		SELECT * FROM APS_LIBRARY
 	</select>
 	
-	<delete id="delete" parameterType="int">
+	<delete id="delete" parameterType="java.lang.String">
 		delete from APS_LIBRARY where LIBRARY_ID = #{id}
 	</delete>
 	
