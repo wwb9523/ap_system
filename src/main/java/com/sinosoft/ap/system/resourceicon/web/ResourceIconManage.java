@@ -26,8 +26,9 @@ public class ResourceIconManage {
 	 */
 	@RequestMapping("add")
 	@ResponseBody
-	public void save(ResourceIconVO resourceIcon) {
-		resourceIconService.save(resourceIcon);
+	public String save(ResourceIconVO resourceIconVo) {
+		resourceIconService.save(resourceIconVo);
+		return "ceshi";
 	}
 	
 	@RequestMapping("delete")

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sinosoft.ap.system.role.domain.RoleRespository">
+
+	<select id="selectList" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.role.domain.RoleVO">
+		SELECT * FROM APS_ROLE WHERE ROLE_ID = #{roleId};
+	</select>
+  
+	<insert id="insert" parameterType="com.sinosoft.ap.system.role.domain.RoleVO">
+		INSERT INTO APS_ROLE(ROLE_ID,ROLE_NAME,ROLE_CODE,ROLE_DESC,ROLE_CREATETIME) VALUES(#{roleId:VARCHAR},#{roleName:VARCHAR},#{roleCode:VARCHAR},#{roleDesc:VARCHAR},#{roleCreattime:TIMESTAMP});
+	</insert>
+	
+	<delete id="delete" parameterType="java.lang.String">
+		DELETE FROM APS_ROLE WHERE ROLE_ID = #{roleId};
+	</delete>
+	
+	
+	<insert id="insertRolePerm" parameterType="java.lang.String">
+		INSERT INTO APS_PERMISSION_ROLE_REL(ROLE_ID,PERMISSION_ID) VALUES(#{roleId:VARCHAR},#{permissionId:VARCHAR});
+	</insert>
+	
+	<delete id="deleteRolePerm" parameterType="java.lang.String">
+		DELETE FROM APS_PERMISSION_ROLE_REL WHERE ROLE_ID = #{roleId} AND PERMISSION_ID = #{permissionId};
+	</delete>
+
+</mapper>

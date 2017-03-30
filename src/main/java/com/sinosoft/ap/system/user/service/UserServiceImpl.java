@@ -12,6 +12,8 @@ import com.sinosoft.ap.system.permission.domain.ModuleInfo;
 import com.sinosoft.ap.system.permission.service.ModuleService;
 import com.sinosoft.ap.system.user.domain.UserInfo;
 import com.sinosoft.ap.system.user.domain.UserMapper;
+import com.sinosoft.ap.system.user.domain.UserRespository;
+import com.sinosoft.ap.system.user.domain.UserVO;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -20,20 +22,73 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private ModuleService moduleService;
 
-	/**
-	 * 根据账号Account查询当前用户
-	 * @param account
-	 * @return
-	 */
+	
+	
+	
+	
+	
+	
+	@Autowired
+	private UserRespository userRespository;
+	@Override
+	public void save(UserVO userEntity) {
+		userRespository.insert(userEntity);
+	}
+
+	@Override
+	public void remove(String userId) {
+		userRespository.delete(userId);
+	}
+
+	@Override
+	public void modifyByPrimaryColumn(UserVO userEntity) {
+		userRespository.updateByPrimaryColumn(userEntity);
+	}
+
+	@Override
+	public List<UserVO> findList() {
+		return userRespository.selectList();
+	}
+	
+	@Override
+	public UserVO findUserByAccount(String userAccount) {
+		
+		return userRespository.getUserByAccount(userAccount);
+	}
+	
+	@Override
+	public void saveUserRole(String userId, String roleId) {
+		userRespository.insertUserRole(userId, roleId);
+		
+	}
+
+	@Override
+	public void saveUserPerm(String userId, String permissionId) {
+		userRespository.insertUserPerm(userId, permissionId);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public UserInfo findByAccount(String account) {
 		return userMapper.findByAccount(account);
 	}
 
-	/**
-	 * 获取资源集合
-	 * @param account
-	 * @return
-	 */
 	public Set<String> findPermissions(String account) {
 		Set<String> set = Sets.newHashSet();
 		UserInfo user = findByAccount(account);
@@ -45,11 +100,6 @@ public class UserServiceImpl implements UserService {
 		return set;
 	}
 
-	/**
-	 * 获取URL权限
-	 * @param account
-	 * @return
-	 */
 	public List<String> findPermissionUrl(String account) {
 		List<String> list = Lists.newArrayList();
 		UserInfo user = findByAccount(account);
@@ -62,4 +112,8 @@ public class UserServiceImpl implements UserService {
 		}
 		return list;
 	}
+
+	
+
+	
 }

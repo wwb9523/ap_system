@@ -3,6 +3,8 @@ package com.sinosoft.ap.system.permission.service;
 import java.util.List;
 import java.util.Set;
 
+import com.sinosoft.ap.system.permission.domain.PermissionVO;
+
 public interface PermissionService {
 
 	/**	
@@ -32,4 +34,17 @@ public interface PermissionService {
 	 * @return
 	 */
 	List<String> findPermissionUrlByRole(String account);
+	
+	
+	public PermissionVO findList(String permissionId);
+	
+	public void remove(String permissionId);
+	
+	public void save(PermissionVO permissionVO);
+	
+	public void modifyByPrimaryColumn(PermissionVO permissionVO);
+	
+	public void savePermissionOpe(String permissionId,String operationId);
+	
+	public void removePermissionOpe(String permissionId,String operationId);
 }

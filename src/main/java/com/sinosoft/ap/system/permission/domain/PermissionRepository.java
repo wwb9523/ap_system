@@ -1,5 +1,6 @@
 package com.sinosoft.ap.system.permission.domain;
 
+import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Set;
 
@@ -32,4 +33,17 @@ public interface PermissionRepository {
 	 * @return
 	 */
 	List<String> findPermissionUrlByRole(String account);
+	
+	
+public PermissionVO selectList(String permissionId);
+	
+	public void delete(String permissionId);
+	
+	public void insert(PermissionVO permissionVO);
+	
+	public void updateByPrimaryColumn(PermissionVO permissionVO);
+	
+	public void insertPermissionOpe(@Param("permissionId")String permissionId,@Param("operationId")String operationId);
+	
+	public void deletePermissionOpe(@Param("permissionId")String permissionId,@Param("operationId")String operationId);
 }
