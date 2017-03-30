@@ -16,10 +16,10 @@
 	</delete>
 	
 	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.library.domain.LibraryVO">
-		update APS_LIBRARY set LIBRARY_NAME = #{library.LIBRARY_NAME},LIBRARY_CODE = #{library.LIBRARY_CODE},LIBRARY_DESC = #{library.LIBRARY_DESC} where LIBRARY_ID = #{library.LIBRARY_ID} 
+		update APS_LIBRARY set LIBRARY_NAME = #{library.libraryName},LIBRARY_CODE = #{library.libraryCode},LIBRARY_DESC = #{library.libraryDesc} where LIBRARY_ID = #{library.libraryId} 
 	</update>
 	
 	<insert id="insert" parameterType="com.sinosoft.ap.system.library.domain.LibraryVO">
-		insert into APS_LIBRARY(LIBRARY_ID,LIBRARY_NAME,LIBRARY_CODE,LIBRARY_DESC) values(#{library.LIBRARY_ID},#{library.LIBRARY_NAME},#{library.LIBRARY_CODE},#{library.LIBRARY_DESC})
+		insert into APS_LIBRARY(LIBRARY_ID,LIBRARY_NAME,LIBRARY_CODE,LIBRARY_DESC) values(#{library.libraryId},#{library.libraryName},#{library.libraryCode},#{library.libraryDesc})
 	</insert>
 </mapper>

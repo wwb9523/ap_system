@@ -8,19 +8,19 @@
 	</select>
 	
 	<select id="selectList" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.organization.domain.OrganizationVO">
-		SELECT * FROM APS_ORGANIZATION where ORGAN_PARENT_ID = #{ORGAN_PARENT_ID}
+		SELECT * FROM APS_ORGANIZATION where ORGAN_PARENT_ID = #{organParentId}
 	</select>
 
 	<delete id="delete" parameterType="com.sinosoft.ap.system.organization.domain.OrganizationVO">
-		delete FROM APS_ORGANIZATION where ORGAN_ID = #{ORGAN_ID}
+		delete FROM APS_ORGANIZATION where ORGAN_ID = #{organId}
 	</delete>
 	
 	<insert id="insert" parameterType="com.sinosoft.ap.system.organization.domain.OrganizationVO">
-		insert into APS_ORGANIZATION(ORGAN_ID,ORGAN_NAME,ORGAN_CODE,ORGAN_SORT,ORGAN_PARENT_ID,ORGAN_LEVEL,ORGAN_DESC) values(#{ORGAN_ID},#{ORGAN_NAME},#{ORGAN_CODE},#{ORGAN_SORT},#{ORGAN_PARENT_ID},#{ORGAN_LEVEL},#{ORGAN_DESC})
+		insert into APS_ORGANIZATION(ORGAN_ID,ORGAN_NAME,ORGAN_CODE,ORGAN_SORT,ORGAN_PARENT_ID,ORGAN_LEVEL,ORGAN_DESC) values(#{organId},#{organName},#{organCode},#{organSort},#{organParentId},#{organLevel},#{organDesc})
 	</insert>
 	
 	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.organization.domain.OrganizationVO">
-		update APS_ORGANIZATION set  ORGAN_NAME = #{ORGAN_NAME},ORGAN_CODE=#{ORGAN_CODE},ORGAN_SORT=#{ORGAN_SORT},ORGAN_PARENT_ID=#{ORGAN_PARENT_ID},ORGAN_LEVEL#{ORGAN_LEVEL},ORGAN_DESC=#{ORGAN_DESC} where ORGAN_ID = #{ORGAN_ID}
+		update APS_ORGANIZATION set  ORGAN_NAME = #{organName},ORGAN_CODE=#{organCode},ORGAN_SORT=#{organSort},ORGAN_PARENT_ID=#{organParentId},ORGAN_LEVEL#{organLevel},ORGAN_DESC=#{organDesc} where ORGAN_ID = #{organId}
 	</update>
 	
 	<insert id="insertOranizationUser">

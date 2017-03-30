@@ -45,7 +45,7 @@ public class ShiroConfig {
 		ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
 		bean.setSecurityManager(securityManager());
 		bean.setLoginUrl("/login/login");
-		bean.setUnauthorizedUrl("/login/login");
+		bean.setUnauthorizedUrl("/login/test");
 		
 		Map<String, Filter>filters = Maps.newHashMap();
 		filters.put("perms", urlPermissionsFilter());

@@ -17,7 +17,7 @@
 	
 	<select id="findPermissionsByRole" parameterType="java.lang.String" resultType="java.lang.String">
 		select ap.PERMISSION_NAME as PERMISSION_NAME from APS_PERMISSION_ROLE_REL apr left join APS_ROLE ar1 on apr.ROLE_ID = ar1.ROLE_ID
-												  left join APS_PERMISSION ap1 on apr.PERMISSION_ID = ap.PERMISSION_ID
+												  left join APS_PERMISSION ap on apr.PERMISSION_ID = ap.PERMISSION_ID
 												  where apr.ROLE_ID in (select ar.ROLE_ID as ROLE_ID from APS_USER_ROLE_REL aur left join APS_USER au on aur.USER_ID = au.USER_ID
 												  left join APS_ROLE ar on aur.ROLE_ID = ar.ROLE_ID
 												  where au.USER_ACCOUNT = #{account})
@@ -25,9 +25,41 @@
 	
 	<select id="findPermissionUrlByRole" parameterType="java.lang.String" resultType="java.lang.String">
 		select ap.PERMISSION_CODE as PERMISSION_CODE from APS_PERMISSION_ROLE_REL apr left join APS_ROLE ar1 on apr.ROLE_ID = ar1.ROLE_ID
-												  left join APS_PERMISSION ap1 on apr.PERMISSION_ID = ap.PERMISSION_ID
+												  left join APS_PERMISSION ap on apr.PERMISSION_ID = ap.PERMISSION_ID
 												  where apr.ROLE_ID in (select ar.ROLE_ID as ROLE_ID from APS_USER_ROLE_REL aur left join APS_USER au on aur.USER_ID = au.USER_ID
 												  left join APS_ROLE ar on aur.ROLE_ID = ar.ROLE_ID
 												  where au.USER_ACCOUNT = #{account})
 	</select>
+	
+	
+	
+	<select id="selectList" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.permission.domain.PermissionVO">
+		SELECT * FROM APS_PERMISSION where PERMISSION_ID = #{permissionId}
+	</select>
+  
+	<insert id="insert" parameterType="com.sinosoft.ap.system.permission.domain.PermissionVO">
+		INSERT INTO APS_PERMISSION(PERMISSION_ID,PERMISSION_NAME,PERMISSION_CODE,PERMISSION_DESC,PERMISSION_CREATETIME) VALUES(#{permissionId:VARCHAR},#{permissionName:VARCHAR},#{permissionCode:VARCHAR},#{permissionDesc:VARCHAR},#{permissionCreattime:TIMESTAMP});
+	</insert>
+	
+	<delete id="delete" parameterType="java.lang.String">
+		DELETE FROM APS_PERMISSION WHERE PERMISSION_ID = #{permissionId};
+	</delete>
+	
+	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.permission.domain.PermissionVO">
+		 UPDATE APS_PERMISSION 
+		 SET 
+		 PERMISSION_NAME = #{permissionName:VARCHAR},PERMISSION_CODE = #{permissionCode:VARCHAR},PERMISSION_DESC = #{permissionDesc:VARCHAR},PERMISSION_CREATETIME = #{permissionCreattime:TIMESTAMP} 
+		 WHERE PERMISSION_ID = #{permissionId:VARCHAR};
+	</update>
+	
+	
+	<insert id="insertPermissionOpe" parameterType="java.lang.String">
+		INSERT INTO APS_PERMISSION_OPERATION_REL(PERMISSION_ID,OPERETION_ID) VALUES(#{permissionId:VARCHAR},#{operationId:VARCHAR});
+	</insert>
+	
+	<delete id="deletePermissionOpe" parameterType="java.lang.String">
+		DELETE FROM APS_PERMISSION_OPERATION_REL WHERE PERMISSION_ID = #{permissionId} AND OPERETION_ID = #{operationId};
+	</delete>
+	
+	
 </mapper>
