@@ -3,28 +3,28 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sinosoft.ap.system.resource.domain.ResourceRepository">	
 
-<select id="selectAll"  resultType="com.sinosoft.ap.system.resource.domain.ResourceVO">
+	<select id="selectAll"  resultType="com.sinosoft.ap.system.resource.domain.ResourceVO">
 		SELECT * FROM APS_RESOURCE
 	</select>
 
 	<select id="selectList" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO" resultType="com.sinosoft.ap.system.resource.domain.ResourceVO">
-		SELECT * FROM APS_RESOURCE where RESOURCE_ID = #{resource.RESOURCE_ID}
+		SELECT * FROM APS_RESOURCE where RESOURCE_ID = #{resource.resourceId}
 	</select>
 
 	<delete id="delete" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO">
-		delete FROM APS_RESOURCE where RESOURCE_ID = #{resource.RESOURCE_ID}
+		delete FROM APS_RESOURCE where RESOURCE_ID = #{resource.resourceId}
 	</delete>
 	
 	<insert id="insert"  parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO">
 		insert into APS_RESOURCE(RESOURCE_ID,RESOURCE_NAME,RESOURCE_TYPE,RESOURCE_ADDRESS,RESOURCE_PARENT_ID,RESOURCE_DESC,RESOURCE_LEVEL,RESOURCE_SORT) 
-		 values(#{source.RESOURCE_ID},#{source.RESOURCE_NAME},#{source.RESOURCE_TYPE},#{source.RESOURCE_ADDRESS},#{source.RESOURCE_PARENT_ID},#{source.RESOURCE_DESC},
-		 #{source.RESOURCE_LEVEL},#{source.RESOURCE_SORT})
+		 values(#{source.resourceId},#{source.resourceName},#{source.resourceType},#{source.resourceAddress},#{source.resourceParentId},#{source.resourceDesc},
+		 #{source.resourceLevel},#{source.resourceSort})
 	</insert>
 	
 	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO">
-		update APS_RESOURCE set RESOURCE_NAME=#{source.RESOURCE_NAME},RESOURCE_TYPE=#{source.RESOURCE_TYPE},RESOURCE_ADDRESS=#{source.RESOURCE_ADDRESS},
-		RESOURCE_PARENT_ID=#{source.RESOURCE_PARENT_ID},RESOURCE_DESC=#{source.RESOURCE_DESC},RESOURCE_LEVEL=#{source.RESOURCE_LEVEL},RESOURCE_SORT=#{source.RESOURCE_SORT}
-		 where RESOURCE_ID=#{source.RESOURCE_ID}
+		update APS_RESOURCE set RESOURCE_NAME=#{source.resourceName},RESOURCE_TYPE=#{source.resourceType},RESOURCE_ADDRESS=#{source.resourceAddress},
+		RESOURCE_PARENT_ID=#{source.resourceParentId},RESOURCE_DESC=#{source.resourceDesc},RESOURCE_LEVEL=#{source.resourceLevel},RESOURCE_SORT=#{source.resourceSort}
+		 where RESOURCE_ID=#{source.resourceId}
 	</update>
 	
 	<insert id="insertRelIcon" parameterType="java.lang.String">

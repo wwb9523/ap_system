@@ -22,7 +22,7 @@ public class ResourceServiceImpl implements ResourceService{
 	 */
 	
 	@Override
-	public List<ResourceVO> findAll() {
+	public ResourceVO findAll() {
 		return resourceRepository.selectAll();
 	}
 	

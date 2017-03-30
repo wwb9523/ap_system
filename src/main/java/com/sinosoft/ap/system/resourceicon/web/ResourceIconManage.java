@@ -13,8 +13,8 @@ import com.sinosoft.ap.system.resourceicon.service.ResourceIconService;
 
 
 @Controller
-@RequestMapping("/resource")
-public class ResourceIconController {
+@RequestMapping("/resourceIcon")
+public class ResourceIconManage {
 	
 	@Autowired
 	private ResourceIconService resourceIconService;
@@ -33,7 +33,7 @@ public class ResourceIconController {
 	@RequestMapping("delete")
 	@ResponseBody
 	public void remove(ResourceIconVO resourceIcon) {
-		String resourceId=resourceIconService.findResourceIconRelById(resourceIcon.getRESOURCE_ICON_ID());
+		String resourceId=resourceIconService.findResourceIconRelById(resourceIcon.getResourceIconId());
 		if(resourceId==null)resourceIconService.remove(resourceIcon);
 	}
 }

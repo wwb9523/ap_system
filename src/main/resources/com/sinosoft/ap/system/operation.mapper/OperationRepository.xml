@@ -4,21 +4,21 @@
 <mapper namespace="com.sinosoft.ap.system.operation.domain.OperationRepository">
 
 	<select id="selectList" parameterType="com.sinosoft.ap.system.operation.domain.OperationVO" resultType="com.sinosoft.ap.system.operation.domain.OperationVO">
-		SELECT * FROM APS_OPERATION where RESOURCE_ID = #{operation.OPERATION_ID}
+		SELECT * FROM APS_OPERATION where RESOURCE_ID = #{operation.operationId}
 	</select>
 
 	<delete id="delete" parameterType="com.sinosoft.ap.system.operation.domain.OperationVO">
-		delete FROM APS_OPERATION where RESOURCE_ID = #{operation.OPERATION_ID}
+		delete FROM APS_OPERATION where RESOURCE_ID = #{operation.operationId}
 	</delete>
 	
 	<insert id="insert" parameterType="com.sinosoft.ap.system.operation.domain.OperationVO">
-		insert into APS_OPERATION(OPERATION_ID,RESOURCE_ID,OPERATION_NAME,OPERATION_DESC) values(#{operation.OPERATION_ID},#{operation.RESOURCE_ID},
-		#{operation.OPERATION_NAME},#{operation.OPERATION_DESC})
+		insert into APS_OPERATION(OPERATION_ID,RESOURCE_ID,OPERATION_NAME,OPERATION_DESC) values(#{operation.operationId},#{operation.resourceId},
+		#{operation.operationName},#{operation.operationDesc})
 	</insert>
 	
 	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.operation.domain.OperationVO">
-		update APS_OPERATION set RESOURCE_ID=#{operation.RESOURCE_ID},OPERATION_NAME=#{operation.OPERATION_NAME},OPERATION_DESC=#{operation.OPERATION_DESC} 
-		where OPERATION_ID=#{operation.OPERATION_ID}
+		update APS_OPERATION set RESOURCE_ID=#{operation.resourceId},OPERATION_NAME=#{operation.operationName},OPERATION_DESC=#{operation.operationDesc} 
+		where OPERATION_ID=#{operation.operationId}
 	</update>
 	
 </mapper>
