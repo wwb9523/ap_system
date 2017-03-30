@@ -2,6 +2,8 @@ package com.sinosoft.ap.system.resource.domain;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 public interface ResourceRepository {
 
 	/**
@@ -15,4 +17,5 @@ public interface ResourceRepository {
 	void delete(ResourceVO resource);
 	void insert(ResourceVO resource);
 	void updateByPrimaryColumn(ResourceVO resource);
+	void insertRelIcon(@Param("resourceId")String resourceId,@Param("resourceIconId")String resourceIconId);
 }

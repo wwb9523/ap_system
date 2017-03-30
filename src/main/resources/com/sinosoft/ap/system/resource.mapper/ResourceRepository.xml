@@ -27,4 +27,8 @@
 		 where RESOURCE_ID=#{source.RESOURCE_ID}
 	</update>
 	
+	<insert id="insertRelIcon" parameterType="java.lang.String">
+		insert into APS_RESOURCE_ICON_REL(RESOURCE_ID,RESOURCE_ICON_ID) values(resourceId,resourceIconId)
+	</insert>
+	
 </mapper>

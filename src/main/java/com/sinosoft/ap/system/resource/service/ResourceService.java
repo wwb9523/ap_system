@@ -16,4 +16,5 @@ public interface ResourceService {
 	void remove(ResourceVO resource);
 	void save(ResourceVO resource);
 	void modifyByPrimaryColumn(ResourceVO resource);
+	void addRelIcon(String resourceId,String resourceIconId);
 }

@@ -12,7 +12,4 @@
 		delete from APS_RESOURCE_ICON where RESOURCE_ICON_ID=#{resourceIcon.RESOURCE_ICON_ID}
 	</delete>
 
-	<insert id="insertRelIcon" parameterType="java.lang.String">
-		insert into APS_RESOURCE_ICON_REL(RESOURCE_ID,RESOURCE_ICON_ID) values(resourceId,resourceIconId)
-	</insert>
 </mapper>

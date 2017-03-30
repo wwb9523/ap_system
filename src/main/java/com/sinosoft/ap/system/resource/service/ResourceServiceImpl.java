@@ -44,4 +44,9 @@ public class ResourceServiceImpl implements ResourceService{
 	public void modifyByPrimaryColumn(ResourceVO resource){
 		resourceRepository.updateByPrimaryColumn(resource);
 	}
+	
+	@Override
+	public void addRelIcon(String resourceId,String resourceIconId){
+		resourceRepository.insertRelIcon(resourceId,resourceIconId);
+	}
 }
