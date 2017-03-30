@@ -1,6 +1,6 @@
 package com.sinosoft.ap.system.userlogin.domain;
 
-public class LoginVO {
+public class UserLoginVO {
 	private String userId;
 	private String userIdCode;
 	private String userAccount;

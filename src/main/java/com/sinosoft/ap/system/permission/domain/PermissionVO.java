@@ -2,7 +2,7 @@ package com.sinosoft.ap.system.permission.domain;
 
 import java.sql.Date;
 
-public class PermissionEntity {
+public class PermissionVO {
 	private String PERMISSION_ID;
 	private String PERMISSION_NAME;
 	private String PERMISSION_CODE;
