@@ -11,7 +11,6 @@ public interface ResourceRepository {
 	 * @param userId
 	 * @return
 	 */
-	ResourceVO selectAll();
 	List<ResourceVO> selectList(ResourceVO resource);
 	void delete(ResourceVO resource);
 	void insert(ResourceVO resource);
