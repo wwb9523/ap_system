@@ -71,8 +71,8 @@ public class OrganizationServiceImpl implements OrganizationService{
 	}
 
 	@Override
-	public boolean removeOrganizationUser(String id) {
-		int count = organizationRepository.removeOrganizationUser(id);
+	public boolean removeOrganizationUser(String u_id,String o_id) {
+		int count = organizationRepository.removeOrganizationUser(u_id,o_id);
 		if (count>0){
 			return true;
 		}
@@ -80,8 +80,8 @@ public class OrganizationServiceImpl implements OrganizationService{
 	}
 
 	@Override
-	public boolean removeOrganizationPermission(String id) {
-		int count = organizationRepository.removeOrganizationPermission(id);
+	public boolean removeOrganizationPermission(String o_id,String p_id) {
+		int count = organizationRepository.removeOrganizationPermission(p_id, o_id);
 		if (count>0){
 			return true;
 		}

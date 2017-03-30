@@ -1,8 +1,9 @@
 package com.sinosoft.ap.system.userloginlog.service;
 
-import com.sinosoft.ap.system.userloginlog.domain.UserLoginLogEntity;
+import java.util.List;
 
-
+import com.sinosoft.ap.system.resource.domain.ResourceVO;
+import com.sinosoft.ap.system.userloginlog.domain.UserLoginLogVO;
 
 public interface UserLoginLogService {
 	/**
@@ -10,5 +11,8 @@ public interface UserLoginLogService {
 	 * @param userId
 	 * @return
 	 */
-	UserLoginLogEntity findLogById(String id);
+	List<UserLoginLogVO> findList(UserLoginLogVO userLoginLogVO);
+	int remove(UserLoginLogVO userLoginLogVO);
+	int save(UserLoginLogVO userLoginLogVO);
+	int modifyByPrimaryColumn(UserLoginLogVO userLoginLogVO);
 }

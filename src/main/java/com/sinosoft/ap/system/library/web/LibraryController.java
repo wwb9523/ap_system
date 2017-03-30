@@ -20,7 +20,7 @@ public class LibraryController {
 	private LibraryService libraryService;
 
 	/**
-	 * 前往修改字典信息页面
+	 * 获取单个的字典信息并前往修改字典信息页面
 	 * @param id
 	 * @return
 	 */
@@ -34,7 +34,7 @@ public class LibraryController {
 	}
 	
 	/**
-	 * 前往修改字典信息页面
+	 * 查询全部字典信息
 	 * @param id
 	 * @return
 	 */
@@ -48,7 +48,7 @@ public class LibraryController {
 	}
 	
 	/**
-	 * 前往修改字典信息页面
+	 * 插入字典信息
 	 * @param id
 	 * @return
 	 */
@@ -64,5 +64,36 @@ public class LibraryController {
 		}
 //		mav.addObject("libraryEntity", libraryEntity);
 		return "defeat";
+	}
+	
+	/**
+	 * 修改字典信息
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("updateInfo")
+	@ResponseBody
+	public String updateInfo(LibraryVO libraryVO) {
+//		ModelAndView mav=new ModelAndView("library/jumpInfoPage.jsp");
+		boolean boo=libraryService.updateLibrary(libraryVO);
+		if (boo){
+			return "success";
+		}
+//		mav.addObject("libraryEntity", libraryEntity);
+		return "defeat";
+	}
+	
+	/**
+	 * 删除字典信息
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("deleteInfo")
+	@ResponseBody
+	public String deleteInfo(String id) {
+//		ModelAndView mav=new ModelAndView("library/jumpInfoPage.jsp");
+		boolean boo=libraryService.deleteLibraruById(id);
+//		mav.addObject("libraryEntity", libraryEntity);
+		return boo+"";
 	}
 }

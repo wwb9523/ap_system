@@ -13,15 +13,15 @@ import com.sinosoft.ap.system.operation.service.OperationService;
 
 
 @Controller
-@RequestMapping("/operation")
+@RequestMapping("/apoperation")
 public class OperationManage {
 	
 	@Autowired
 	private OperationService operationService;
 
 	/**
-	 * 前往修改字典信息页面
-	 * @param id
+	 * 根据operationId查询operation对象
+	 * @param operation
 	 * @return
 	 */
 	@RequestMapping("find")
@@ -31,18 +31,33 @@ public class OperationManage {
 		return operationVO;
 	}
 	
+	/**
+	 * 根据operationId删除operation对象
+	 * @param operation
+	 * @return
+	 */
 	@RequestMapping("delete")
 	@ResponseBody
 	public void remove(OperationVO operation) {
 		operationService.remove(operation);
 	}
 	
+	/**
+	 * 新增operation对象
+	 * @param operation
+	 * @return
+	 */
 	@RequestMapping("add")
 	@ResponseBody
 	public void save(OperationVO operation) {
 		operationService.save(operation);
 	}
 	
+	/**
+	 * 根据operationId修改operation对象
+	 * @param operation
+	 * @return
+	 */
 	@RequestMapping("modify")
 	@ResponseBody
 	public void modifyByPrimaryColumn(OperationVO operation) {

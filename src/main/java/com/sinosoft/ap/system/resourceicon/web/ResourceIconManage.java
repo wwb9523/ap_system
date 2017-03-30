@@ -13,15 +13,15 @@ import com.sinosoft.ap.system.resourceicon.service.ResourceIconService;
 
 
 @Controller
-@RequestMapping("/resourceIcon")
+@RequestMapping("/apresourceIcon")
 public class ResourceIconManage {
 	
 	@Autowired
 	private ResourceIconService resourceIconService;
 
 	/**
-	 * 前往修改字典信息页面
-	 * @param id
+	 * 新增resourceIcon对象
+	 * @param resourceIconVo
 	 * @return
 	 */
 	@RequestMapping("add")
@@ -31,6 +31,11 @@ public class ResourceIconManage {
 		return "ceshi";
 	}
 	
+	/**
+	 * 根据resourceIconId删除resourceIcon对象
+	 * @param resourceIconVo
+	 * @return
+	 */
 	@RequestMapping("delete")
 	@ResponseBody
 	public void remove(ResourceIconVO resourceIcon) {

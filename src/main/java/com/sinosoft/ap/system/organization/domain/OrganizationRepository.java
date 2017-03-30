@@ -20,7 +20,7 @@ public interface OrganizationRepository {
 	
 	int insertOranizationPermisson(@Param("p_id")String p_id,@Param("o_id")String o_id);
 	
-	int removeOrganizationUser(String id);
+	int removeOrganizationUser(@Param("u_id")String u_id,@Param("o_id")String o_id);
 	
-	int removeOrganizationPermission(String id);
+	int removeOrganizationPermission(@Param("p_id")String p_id,@Param("o_id")String o_id);
 }

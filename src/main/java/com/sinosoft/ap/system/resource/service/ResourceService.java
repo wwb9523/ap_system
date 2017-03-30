@@ -13,7 +13,6 @@ public interface ResourceService {
 	 * @param userId
 	 * @return
 	 */
-	ResourceVO findAll();
 	List<ResourceVO> findList(ResourceVO resource);
 	void remove(ResourceVO resource);
 	void save(ResourceVO resource);

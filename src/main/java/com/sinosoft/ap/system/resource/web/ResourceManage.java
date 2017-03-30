@@ -13,21 +13,14 @@ import com.sinosoft.ap.system.resource.service.ResourceService;
 
 
 @Controller
-@RequestMapping("/resource")
+@RequestMapping("/apresource")
 public class ResourceManage {
 	
 	@Autowired
 	private ResourceService resourceService;
 
-	@RequestMapping("findALL")
-	@ResponseBody
-	public String findAll() {
-		ResourceVO resourceVO=resourceService.findAll();
-		return resourceVO.getResourceId();
-	}
-	
 	/**
-	 * 前往修改字典信息页面
+	 * 根据resourceId查询resource对象
 	 * @param id
 	 * @return
 	 */
@@ -38,6 +31,11 @@ public class ResourceManage {
 		return resourceVO;
 	}
 	
+	/**
+	 * 根据resourceId删除resource对象
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping("remove")
 	@ResponseBody
 	public void remove(ResourceVO resource) {
@@ -47,6 +45,11 @@ public class ResourceManage {
 		resourceService.removeRelIconById(resource.getResourceId(),resourceIconId);
 	}
 	
+	/**
+	 * 新增resource对象
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping("saveResource")
 	@ResponseBody
 	public void save(ResourceVO resource,String resourceIconId) {
@@ -54,6 +57,12 @@ public class ResourceManage {
 		resourceService.save(resource);
 	}
 	
+	
+	/**
+	 * 根据resourceId修改resource对象
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping("modify")
 	@ResponseBody
 	public void modifyByPrimaryColumn(ResourceVO resource,String resourceIconId){
