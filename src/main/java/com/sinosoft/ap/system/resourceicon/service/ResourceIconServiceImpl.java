@@ -18,12 +18,22 @@ public class ResourceIconServiceImpl implements ResourceIconService{
 	
 	@Override
 	public  void remove(ResourceIconVO resourceIcon){
-		resourceIconRepository.delete(resourceIcon);
+		int count =resourceIconRepository.delete(resourceIcon);
+		if(count<0){
+			//	System.out.println("删除失败");
+			}else{
+		//		System.out.println("删除成功");
+			}
 	}
 	
 	@Override
 	public void save(ResourceIconVO resourceIcon){
-		resourceIconRepository.insert(resourceIcon);
+		int count = resourceIconRepository.insert(resourceIcon);
+		if(count<0){
+		//	System.out.println("添加失败");
+		}else{
+			//System.out.println("添加成功");
+		}
 	}
 	
 	@Override

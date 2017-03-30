@@ -4,12 +4,16 @@
 <mapper namespace="com.sinosoft.ap.system.resourceicon.domain.ResourceIconRepository">
 
 	<insert id="insert" parameterType="com.sinosoft.ap.system.resourceicon.domain.ResourceIconVO">
-		insert into APS_RESOURCE_ICON(RESOURCE_ICON_ID,RESOURCE_ICON_NAME,RESOURCE_ICON_ADDRESS) values(#{resourceIcon.resourceIconId},#{resourceIcon.resourceIconName},
-		#{resourceIcon.resourceIconAddress})
+		insert into APS_RESOURCE_ICON(RESOURCE_ICON_ID,RESOURCE_ICON_NAME,RESOURCE_ICON_ADDRESS) values(#{resourceIconId},#{resourceIconName},
+		#{resourceIconAddress})
 	</insert>
 
 	<delete id="delete" parameterType="com.sinosoft.ap.system.resourceicon.domain.ResourceIconVO">
-		delete from APS_RESOURCE_ICON where RESOURCE_ICON_ID=#{resourceIcon.resourceIconId}
+		delete from APS_RESOURCE_ICON where RESOURCE_ICON_ID=#{resourceIconId}
 	</delete>
+	
+	<select id="selectResourceIconRelById" resultType="java.lang.String" parameterType="java.lang.String">
+		select RESOURCE_ID from APS_RESOURCE_ICON_REL where RESOURCE_ICON_ID=#{resourceIconId}
+	</select>
 
 </mapper>
