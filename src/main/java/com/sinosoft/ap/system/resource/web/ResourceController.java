@@ -24,10 +24,28 @@ public class ResourceController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("jumpInfoPage")
+	@RequestMapping("findList")
 	@ResponseBody
 	public List<ResourceVO> findList(ResourceVO operation) {
 		List<ResourceVO> operationVO=resourceService.findList(operation);
 		return operationVO;
+	}
+	
+	@RequestMapping("remove")
+	@ResponseBody
+	public void remove(ResourceVO operation) {
+		resourceService.remove(operation);
+	}
+	
+	@RequestMapping("save")
+	@ResponseBody
+	public void save(ResourceVO operation) {
+		resourceService.remove(operation);
+	}
+	
+	@RequestMapping("save")
+	@ResponseBody
+	public void modifyByPrimaryColumn(ResourceVO resource){
+		resourceService.modifyByPrimaryColumn(resource);
 	}
 }
