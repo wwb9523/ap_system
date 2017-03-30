@@ -24,9 +24,15 @@ public class ResourceIconController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("save")
+	@RequestMapping("add")
 	@ResponseBody
 	public void save(ResourceIconVO resourceIcon) {
 		resourceIconService.save(resourceIcon);
+	}
+	
+	@RequestMapping("delete")
+	@ResponseBody
+	public void remove(ResourceIconVO resourceIcon) {
+		resourceIconService.remove(resourceIcon);
 	}
 }

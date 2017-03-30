@@ -19,6 +19,13 @@ public class ResourceController {
 	@Autowired
 	private ResourceService resourceService;
 
+	@RequestMapping("findALL")
+	@ResponseBody
+	public List<ResourceVO> findAll() {
+		List<ResourceVO> operationVO=resourceService.findAll();
+		return operationVO;
+	}
+	
 	/**
 	 * 前往修改字典信息页面
 	 * @param id
@@ -37,13 +44,13 @@ public class ResourceController {
 		resourceService.remove(operation);
 	}
 	
-	@RequestMapping("save")
+	@RequestMapping("saveResource")
 	@ResponseBody
 	public void save(ResourceVO operation) {
 		resourceService.remove(operation);
 	}
 	
-	@RequestMapping("save")
+	@RequestMapping("modify")
 	@ResponseBody
 	public void modifyByPrimaryColumn(ResourceVO resource){
 		resourceService.modifyByPrimaryColumn(resource);

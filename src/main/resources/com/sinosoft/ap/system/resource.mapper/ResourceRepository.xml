@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sinosoft.ap.system.resource.domain.ResourceRepository">
+<mapper namespace="com.sinosoft.ap.system.resource.domain.ResourceRepository">	
+
+<select id="selectAll"  resultType="com.sinosoft.ap.system.resource.domain.ResourceVO">
+		SELECT * FROM APS_RESOURCE
+	</select>
 
 	<select id="selectList" parameterType="com.sinosoft.ap.system.resource.domain.ResourceVO" resultType="com.sinosoft.ap.system.resource.domain.ResourceVO">
 		SELECT * FROM APS_RESOURCE where RESOURCE_ID = #{resource.RESOURCE_ID}

@@ -24,10 +24,28 @@ public class OperationController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("jumpInfoPage")
+	@RequestMapping("find")
 	@ResponseBody
 	public List<OperationVO> findList(OperationVO operation) {
 		List<OperationVO> operationVO=operationService.findList(operation);
 		return operationVO;
+	}
+	
+	@RequestMapping("delete")
+	@ResponseBody
+	public void remove(OperationVO operation) {
+		operationService.remove(operation);
+	}
+	
+	@RequestMapping("add")
+	@ResponseBody
+	public void save(OperationVO operation) {
+		operationService.save(operation);
+	}
+	
+	@RequestMapping("modify")
+	@ResponseBody
+	public void modifyByPrimaryColumn(OperationVO operation) {
+		operationService.modifyByPrimaryColumn(operation);
 	}
 }
