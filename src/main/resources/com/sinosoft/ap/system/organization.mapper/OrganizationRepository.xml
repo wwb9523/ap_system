@@ -23,4 +23,19 @@
 		update APS_ORGANIZATION set  ORGAN_NAME = #{ORGAN_NAME},ORGAN_CODE=#{ORGAN_CODE},ORGAN_SORT=#{ORGAN_SORT},ORGAN_PARENT_ID=#{ORGAN_PARENT_ID},ORGAN_LEVEL#{ORGAN_LEVEL},ORGAN_DESC=#{ORGAN_DESC} where ORGAN_ID = #{ORGAN_ID}
 	</update>
 	
+	<insert id="insertOranizationUser">
+		insert into APS_USER_ORGANIZATION_REL values(#{u_id},#{o_id})
+	</insert>
+	
+	<insert id="insertOranizationPermisson">
+		insert into APS_PERMISSION_ORGAN_REL values(#{p_id},#{o_id})
+	</insert>
+	
+	<delete id="removeOrganizationUser">
+		delete from APS_USER_ORGANIZATION_REL where USER_ID = #{id}
+	</delete>
+	
+	<delete id="removeOrganizationPermission">
+		delete from APS_PERMISSION_ORGAN_REL where ORGAN_ID = #{id}
+	</delete>
 </mapper>
