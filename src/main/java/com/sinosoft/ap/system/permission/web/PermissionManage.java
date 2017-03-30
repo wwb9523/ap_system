@@ -10,7 +10,7 @@ import com.sinosoft.ap.system.permission.service.PermissionService;
 
 
 @Controller
-@RequestMapping("/permission")
+@RequestMapping("/appermission")
 public class PermissionManage {
 	@Autowired
 	private PermissionService permissionService;
@@ -44,11 +44,6 @@ public class PermissionManage {
 		permissionService.save(permissionVO);
 	}
 	
-	@RequestMapping("/changePermissionInfo")
-	@ResponseBody
-	public void modifyByPrimaryColumn(PermissionVO permissionVO){
-		permissionService.modifyByPrimaryColumn(permissionVO);
-	}
 	
 	/**
 	 * 许可关联操作

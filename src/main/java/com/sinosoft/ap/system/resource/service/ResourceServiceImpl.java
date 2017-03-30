@@ -21,10 +21,6 @@ public class ResourceServiceImpl implements ResourceService{
 	 * @return
 	 */
 	
-	@Override
-	public ResourceVO findAll() {
-		return resourceRepository.selectAll();
-	}
 	
 	@Override
 	public List<ResourceVO> findList(ResourceVO resource) {

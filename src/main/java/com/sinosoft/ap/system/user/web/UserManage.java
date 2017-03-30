@@ -12,7 +12,7 @@ import com.sinosoft.ap.system.user.domain.UserVO;
 import com.sinosoft.ap.system.user.service.UserService;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/apuser")
 
 public class UserManage {
 	@Autowired

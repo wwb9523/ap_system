@@ -45,12 +45,6 @@
 		DELETE FROM APS_PERMISSION WHERE PERMISSION_ID = #{permissionId};
 	</delete>
 	
-	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.permission.domain.PermissionVO">
-		 UPDATE APS_PERMISSION 
-		 SET 
-		 PERMISSION_NAME = #{permissionName:VARCHAR},PERMISSION_CODE = #{permissionCode:VARCHAR},PERMISSION_DESC = #{permissionDesc:VARCHAR},PERMISSION_CREATETIME = #{permissionCreattime:TIMESTAMP} 
-		 WHERE PERMISSION_ID = #{permissionId:VARCHAR};
-	</update>
 	
 	
 	<insert id="insertPermissionOpe" parameterType="java.lang.String">
