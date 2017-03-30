@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sinosoft.ap.system.library.domain.LibraryEntity;
+import com.sinosoft.ap.system.library.domain.LibraryVO;
 import com.sinosoft.ap.system.library.domain.LibraryRepository;
 
 
@@ -20,7 +20,7 @@ public class LibraryServiceImpl implements LibraryService{
 	 * @return
 	 */
 	@Override
-	public LibraryEntity findLibraryById(String id) {
+	public LibraryVO findLibraryById(String id) {
 		return libraryRepository.findLibraryById(id);
 	}
 	
@@ -29,7 +29,7 @@ public class LibraryServiceImpl implements LibraryService{
 	 * @return
 	 */
 	@Override
-	public List<LibraryEntity> findLibraryInfoAll(){
+	public List<LibraryVO> selectList(){
 		return null;
 	}
 	
@@ -40,7 +40,37 @@ public class LibraryServiceImpl implements LibraryService{
 	 */
 	@Override
 	public boolean deleteLibraruById(String id){
-		int count=libraryRepository.deleteLibraruById(id);
+		int count=libraryRepository.delete(id);
+		if (count>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	/**
+	 * 根据id删除字典信息
+	 * @param id
+	 * @return
+	 */
+	@Override
+	public boolean insertLibrary(LibraryVO libraryVO){
+		int count=libraryRepository.insert(libraryVO);
+		if (count>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	/**
+	 * 根据id删除字典信息
+	 * @param id
+	 * @return
+	 */
+	@Override
+	public boolean updateLibrary(LibraryVO libraryVO){
+		int count=libraryRepository.updateByPrimaryColumn(libraryVO);
 		if (count>0){
 			return true;
 		}else{

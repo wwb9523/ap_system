@@ -2,7 +2,7 @@ package com.sinosoft.ap.system.library.domain;
 
 import java.sql.Date;
 
-public class LibraryEntity {
+public class LibraryVO {
 	private String libraryId;
 	private String libraryName;
 	private String libraryCode;

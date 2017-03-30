@@ -11,7 +11,7 @@ import com.sinosoft.ap.system.userhead.domain.UserHeadRepository;
 public class UserHeadServiceImpl implements UserHeadService{
 	@Autowired
 	private UserHeadRepository userHeadRepository;
-
+	
 	/**
 	 * 获取角色模块
 	 * @param userId
@@ -21,4 +21,5 @@ public class UserHeadServiceImpl implements UserHeadService{
 	public UserHeadEntity findHeadByUserId(String id) {
 		return userHeadRepository.findHeadByUserId(id);
 	}
+	
 }

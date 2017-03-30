@@ -3,12 +3,23 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sinosoft.ap.system.library.domain.LibraryRepository">
 
-	<select id="findLibraryById" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.library.domain.LibraryEntity">
+	<select id="findLibraryById" parameterType="java.lang.String" resultType="com.sinosoft.ap.system.library.domain.LibraryVO">
 		SELECT * FROM APS_LIBRARY where LIBRARY_ID = #{id}
 	</select>
 
-
-	<select id="findLibraryInfoAll" resultType="com.sinosoft.ap.system.library.domain.LibraryEntity">
+	<select id="selectList" resultType="com.sinosoft.ap.system.library.domain.LibraryVO">
 		SELECT * FROM APS_LIBRARY
 	</select>
+	
+	<delete id="delete" parameterType="int">
+		delete from APS_LIBRARY where LIBRARY_ID = #{id}
+	</delete>
+	
+	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.library.domain.LibraryVO">
+		update APS_LIBRARY set LIBRARY_NAME = #{library.LIBRARY_NAME},LIBRARY_CODE = #{library.LIBRARY_CODE},LIBRARY_DESC = #{library.LIBRARY_DESC},LIBRARY_CREATTIME = #{library.LIBRARY_CREATTIME} where LIBRARY_ID = #{library.LIBRARY_ID} 
+	</update>
+	
+	<insert id="insert" parameterType="com.sinosoft.ap.system.library.domain.LibraryVO">
+		insert into APS_LIBRARY(LIBRARY_ID,LIBRARY_NAME,LIBRARY_CODE,LIBRARY_DESC,LIBRARY_CREATTIME) values(#{library.LIBRARY_ID},#{library.LIBRARY_NAME},#{library.LIBRARY_CODE},#{library.LIBRARY_DESC},#{library.LIBRARY_CREATTIME})
+	</insert>
 </mapper>
