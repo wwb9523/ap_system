@@ -8,13 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import com.sinosoft.ap.system.operation.domain.OperationEntity;
 import com.sinosoft.ap.system.operation.domain.OperationRepository;
-import com.sinosoft.ap.system.permission.domain.ModuleInfo;
-import com.sinosoft.ap.system.permission.service.ModuleService;
-import com.sinosoft.ap.system.resourceicon.domain.ResourceIconEntity;
-import com.sinosoft.ap.system.user.domain.UserInfo;
-import com.sinosoft.ap.system.user.domain.UserMapper;
+import com.sinosoft.ap.system.operation.domain.OperationVO;
 
 @Service
 public class OperationServiceImpl implements OperationrService{
@@ -28,22 +23,22 @@ public class OperationServiceImpl implements OperationrService{
 	 */
 	
 	@Override
-	public List<OperationEntity> findList(OperationEntity operation) {
+	public List<OperationVO> findList(OperationVO operation) {
 		return operationRepository.selectList(operation);
 	}
 	
 	@Override
-	public  void remove(OperationEntity operation){
+	public  void remove(OperationVO operation){
 		operationRepository.delete(operation);
 	}
 	
 	@Override
-	public void save(OperationEntity operation){
+	public void save(OperationVO operation){
 		operationRepository.insert(operation);
 	}
 	
 	@Override
-	public void modifyByPrimaryColumn(OperationEntity operation){
+	public void modifyByPrimaryColumn(OperationVO operation){
 		operationRepository.updateByPrimaryColumn(operation);
 	}
 }

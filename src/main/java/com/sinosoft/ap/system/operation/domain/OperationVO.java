@@ -2,7 +2,7 @@ package com.sinosoft.ap.system.operation.domain;
 
 import java.sql.Date;
 
-public class OperationEntity {
+public class OperationVO {
 	private String OPERATION_ID;
 	private String RESOURCE_ID;
 	private String OPERATION_NAME;

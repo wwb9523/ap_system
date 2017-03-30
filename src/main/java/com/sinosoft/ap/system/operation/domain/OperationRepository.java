@@ -10,8 +10,8 @@ import com.sinosoft.ap.system.user.domain.UserInfo;
 public interface OperationRepository {
 
 	//@Select("select * from t_user where account=#{account}")
-	List<OperationEntity> selectList(OperationEntity operation);
-	void delete(OperationEntity operation);
-	void insert(OperationEntity operation);
-	void updateByPrimaryColumn(OperationEntity operation);
+	List<OperationVO> selectList(OperationVO operation);
+	void delete(OperationVO operation);
+	void insert(OperationVO operation);
+	void updateByPrimaryColumn(OperationVO operation);
 }
