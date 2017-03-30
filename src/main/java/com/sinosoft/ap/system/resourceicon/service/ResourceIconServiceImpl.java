@@ -26,4 +26,9 @@ public class ResourceIconServiceImpl implements ResourceIconService{
 		resourceIconRepository.insert(resourceIcon);
 	}
 	
+	@Override
+	public String findResourceIconRelById(String resourceIconId){
+		String resourceId=resourceIconRepository.selectResourceIconRelById(resourceIconId);
+		return resourceId;
+	}
 }
