@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sinosoft.ap.system.permission.domain.PermissionRepository">
+	
+	<select id="findPermissionsByUser" parameterType="java.lang.String" resultType="java.lang.String">
+		select ap.PERMISSION_NAME as PERMISSION_NAME from APS_USER_PERMISSION_REL aup left join APS_USER au on aup.USER_ID = au.USER_ID
+												  left join APS_PERMISSION ap on aup.PERMISSION_ID = ap.PERMISSION_ID
+												  where au.USER_ACCOUNT = #{account}
+	</select>
+	
+	<select id="findPermissionUrlByUser" parameterType="java.lang.String" resultType="java.lang.String">
+		select ap.PERMISSION_CODE as PERMISSION_CODE from APS_USER_PERMISSION_REL aup left join APS_USER au on aup.USER_ID = au.USER_ID
+												  left join APS_PERMISSION ap on aup.PERMISSION_ID = ap.PERMISSION_ID
+												  where au.USER_ACCOUNT = #{account}
+	</select>
+	
+	<select id="findPermissionsByRole" parameterType="java.lang.String" resultType="java.lang.String">
+		select ap.PERMISSION_NAME as PERMISSION_NAME from APS_PERMISSION_ROLE_REL apr left join APS_ROLE ar1 on apr.ROLE_ID = ar1.ROLE_ID
+												  left join APS_PERMISSION ap1 on apr.PERMISSION_ID = ap.PERMISSION_ID
+												  where apr.ROLE_ID in (select ar.ROLE_ID as ROLE_ID from APS_USER_ROLE_REL aur left join APS_USER au on aur.USER_ID = au.USER_ID
+												  left join APS_ROLE ar on aur.ROLE_ID = ar.ROLE_ID
+												  where au.USER_ACCOUNT = #{account})
+	</select>
+	
+	<select id="findPermissionUrlByRole" parameterType="java.lang.String" resultType="java.lang.String">
+		select ap.PERMISSION_CODE as PERMISSION_CODE from APS_PERMISSION_ROLE_REL apr left join APS_ROLE ar1 on apr.ROLE_ID = ar1.ROLE_ID
+												  left join APS_PERMISSION ap1 on apr.PERMISSION_ID = ap.PERMISSION_ID
+												  where apr.ROLE_ID in (select ar.ROLE_ID as ROLE_ID from APS_USER_ROLE_REL aur left join APS_USER au on aur.USER_ID = au.USER_ID
+												  left join APS_ROLE ar on aur.ROLE_ID = ar.ROLE_ID
+												  where au.USER_ACCOUNT = #{account})
+	</select>
+</mapper>
