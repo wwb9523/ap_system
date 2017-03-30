@@ -1,11 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: spring-boot-shiro
 Implementation-Version: 1.5.1.RELEASE
-<<<<<<< HEAD
-Built-By: Administrator
-=======
-Built-By: APTX
->>>>>>> d198fa7a9d58b9759f5ee69b53a8e67046980536
+Built-By: bojingqian
 Implementation-Vendor-Id: org.springframework.boot
 Build-Jdk: 1.8.0_121
 Implementation-URL: http://maven.apache.org
