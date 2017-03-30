@@ -44,8 +44,8 @@ public class ShiroConfig {
 	public ShiroFilterFactoryBean shiroFilter(){
 		ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
 		bean.setSecurityManager(securityManager());
-		bean.setLoginUrl("/index/unauthor");
-		bean.setUnauthorizedUrl("/index");
+		bean.setLoginUrl("/login/login");
+		bean.setUnauthorizedUrl("/login/login");
 		
 		Map<String, Filter>filters = Maps.newHashMap();
 		filters.put("perms", urlPermissionsFilter());
@@ -60,7 +60,7 @@ public class ShiroConfig {
 //		chains.put("/css/**", "anon");
 //		chains.put("/layer/**", "anon");
 //		chains.put("/login/**", "perms");
-//		chains.put("/index/**", "perms");
+		chains.put("/ap**/**", "perms");
 		bean.setFilterChainDefinitionMap(chains);
 		return bean;
 	}

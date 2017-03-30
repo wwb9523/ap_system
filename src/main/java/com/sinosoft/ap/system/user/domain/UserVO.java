@@ -1,12 +1,14 @@
-package com.sinosoft.ap.system.userlogin.domain;
+package com.sinosoft.ap.system.user.domain;
 
-public class UserLoginVO {
+import java.sql.Date;
+
+public class UserVO {
 	private String userId;
 	private String userIdCode;
 	private String userAccount;
 	private String userMaile;
-	private String userTelnumber;
-	private String userPassword;
+	private Integer userTelnumber;
+	private Date userCreattime;
 	
 	public void setUserId(String userId){
 		this.userId=userId;
@@ -36,17 +38,18 @@ public class UserLoginVO {
 		return this.userMaile;
 	}
 	
-	public void setUserTelnumber(String userTelnumber){
+	public void setUserTelnumber(Integer userTelnumber){
 		this.userTelnumber=userTelnumber;
 	}
-	public String getUserTelnumber(){
+	public Integer getUserTelnumber(){
 		return this.userTelnumber;
 	}
-	public String getUserPassword() {
-		return userPassword;
-	}
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
-	}
 	
+	public void setUserCreattime(Date userCreattime){
+		this.userCreattime=userCreattime;
+	}
+	public Date getUserCreateTime(){
+		return this.userCreattime;
+	}
+
 }

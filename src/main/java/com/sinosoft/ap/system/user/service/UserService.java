@@ -4,16 +4,36 @@ import java.util.List;
 import java.util.Set;
 
 import com.sinosoft.ap.system.user.domain.UserInfo;
+import com.sinosoft.ap.system.user.domain.UserVO;
 
 
 
 public interface UserService {
+
 	
-	/**
-	 * 根据账号Account查询当前用户
-	 * @param account
-	 * @return
-	 */
+	
+	public void save(UserVO userEntity);
+	
+	public void remove(String userId);
+	
+	public void modifyByPrimaryColumn(UserVO userEntity);
+	
+	public List<UserVO> findList();
+	
+	public UserVO findUserByAccount(String userAccount);
+	
+	public void saveUserRole(String userId,String roleId);
+	
+	public void saveUserPerm(String userId,String permissionId);
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	UserInfo findByAccount(String account);
 	
 	/**	

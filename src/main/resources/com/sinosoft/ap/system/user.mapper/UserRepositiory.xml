@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sinosoft.ap.system.user.domain.UserRespository">
+
+	<select id="selectList" resultType="com.sinosoft.ap.system.user.domain.UserVO">
+		SELECT * FROM APS_USER;
+	</select>
+	
+	
+	<select id="getUserByAccount" resultType="com.sinosoft.ap.system.user.domain.UserVO">
+		SELECT * FROM APS_USER WHERE USER_ACCOUNT = #{userAccount};
+	</select>
+  
+	<insert id="insert" parameterType="com.sinosoft.ap.system.user.domain.UserVO">
+		INSERT INTO APS_USER(USER_ID,USER_ID_CODE,USER_ACCOUNT,USER_TELNUMBER,USER_MAIL,USER_CREATETIME) VALUES(#{userId:VARCHAR},#{userIdCode:VARCHAR},#{userAccount:VARCHAR},#{userMaile:VARCHAR},#{userTelnumber:INTEGER},#{userCreattime:TIMESTAMP});
+	</insert>
+	
+	<delete id="delete" parameterType="java.lang.String">
+		DELETE FROM APS_USER WHERE USER_ID = #{userId};
+	</delete>
+	
+	<update id="updateByPrimaryColumn" parameterType="com.sinosoft.ap.system.user.domain.UserVO">
+		UPDATE APS_USER 
+		SET 
+		<if test ="userIdCode != null">
+		USER_ID_CODE = #{userIdCode}, 
+		</if>
+		<if test ="userAccount != null">
+		USER_ACCOUNT= #{userAccount}, 
+		</if>
+		<if test ="userTelnumber != null">
+		USER_TELNUMBER = #{userTelnumber}, 
+		</if>
+		<if test ="userCreattime != null">
+		USER_CREATETIME= #{userCreattime}, 
+		</if>
+		
+		<if test ="userMaile != null">
+		USER_Mail = #{userMaile}  
+		</if>
+		where USER_ID = #{userId:VARCHAR};
+	</update>
+	
+	<insert id="insertUserRole" parameterType="java.lang.String">
+		INSERT INTO APS_USER_ROLE_REL(USER_ID,ROLE_ID) VALUES(#{userId:VARCHAR},#{roleId:VARCHAR});
+	</insert>
+	
+	<insert id="insertUserPerm" parameterType="java.lang.String">
+		INSERT INTO APS_USER_PERMISSION_REL(USER_ID,PERMISSION_ID) VALUES(#{userId:VARCHAR},#{permissionId:VARCHAR});
+	</insert>
+
+</mapper>
