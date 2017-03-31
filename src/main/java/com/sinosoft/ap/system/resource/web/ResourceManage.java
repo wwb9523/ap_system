@@ -24,7 +24,7 @@ public class ResourceManage {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("findList")
+	@RequestMapping("find")
 	@ResponseBody
 	public List<ResourceVO> findList(ResourceVO resource) {
 		List<ResourceVO> resourceVO=resourceService.findList(resource);
@@ -36,7 +36,7 @@ public class ResourceManage {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("remove")
+	@RequestMapping("delete")
 	@ResponseBody
 	public void remove(ResourceVO resource) {
 		resourceService.remove(resource);
@@ -50,7 +50,7 @@ public class ResourceManage {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("saveResource")
+	@RequestMapping("add")
 	@ResponseBody
 	public void save(ResourceVO resource,String resourceIconId) {
 		resourceService.addRelIcon(resource.getResourceId(), resourceIconId);

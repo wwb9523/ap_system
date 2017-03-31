@@ -24,7 +24,7 @@ public class UserLoginLogManage {
 	 * @param userLoginLog
 	 * @return
 	 */
-	@RequestMapping("findList")
+	@RequestMapping("find")
 	@ResponseBody
 	public List<UserLoginLogVO> findList(UserLoginLogVO userLoginLogVO) {
 		List<UserLoginLogVO> resourceVO=userLoginLogService.findList(userLoginLogVO);
@@ -36,7 +36,7 @@ public class UserLoginLogManage {
 	 * @param userLoginLog
 	 * @return
 	 */
-	@RequestMapping("remove")
+	@RequestMapping("delete")
 	@ResponseBody
 	public void remove(UserLoginLogVO userLoginLogVO) {
 		userLoginLogService.remove(userLoginLogVO);
@@ -47,7 +47,7 @@ public class UserLoginLogManage {
 	 * @param userLoginLog
 	 * @return
 	 */
-	@RequestMapping("saveLog")
+	@RequestMapping("add")
 	@ResponseBody
 	public void save(UserLoginLogVO userLoginLogVO) {
 		userLoginLogService.save(userLoginLogVO);
